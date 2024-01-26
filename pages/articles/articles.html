@@ -1,0 +1,111 @@
+<script type="module">
+	import Article from "/api/wjst/article";
+	import Dom from "/api/wjst/dom";
+	Article.perPage = 10;
+	let page = 1;
+
+	if ((await Article.page(1)).length < Article.perPage) {
+		Dom.remove("loadArticles");
+	}
+
+	document
+		.getElementById("loadArticles")
+		.addEventListener("click", async () => {
+			page++;
+			const articles = await Article.page(page);
+
+			if (articles.length < Article.perPage) {
+				Dom.remove("loadArticles");
+			}
+			for (const article of articles) {
+				if (!article.thumbs) {
+					article.thumbs = [];
+				}
+				Dom.add(
+					"articles",
+					Dom.template("article", {
+						thumb: article.thumb,
+						thumbs: article.thumbs.map((thumb) => {
+							return Dom.template("article_thumb", {
+								name: article.name,
+								thumb,
+							});
+						}),
+						name: article.name,
+						_id: article._id,
+						short: article.short,
+						description: article.description,
+					})
+				);
+			}
+		});
+</script>
+
+<div class="container-new">
+	<div>
+		<h1>{{{translate("Rohovskanika.Articles")}}}</h1>
+		<a href="#page-sample" class="btn btn-circle page-scroll">
+			<i class="fa fa-angle-double-down animated"></i>
+		</a>
+	</div>
+	<!-- Page Sample Section -->
+	<section id="page-sample">
+		<div class="polosar">
+			<div class="container content-section text-center">
+				<div class="row" id="articles">
+					{% for article in articles %}
+					<div class="img-slider">
+						<div class="col-md-4">
+							<a href="/article/{{{article.id}}}">
+								<div class="card">
+									<img
+										src="{{{article.thumb}}}"
+										alt="{{{article.name}}}"
+										width="700px"
+										class="img-rounded"
+									/>
+									<div class="card-body">
+										<h5 class="card-title">
+											{{{article.name}}}
+										</h5>
+										<p class="card-text">
+											{{{article.short}}}
+										</p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+
+				<button class="load-more" id="loadArticles">
+					{{{translate("Rohovskanika.Load more")}}}
+				</button>
+			</div>
+		</div>
+	</section>
+</div>
+<div id="template-article">
+	<div class="img-slider"  style="display: none;" >
+		<div class="col-md-4">
+			<a href="/article/{_id}">
+				<div class="card">
+					<img
+						src="{{{thumb}}}"
+						alt="{{{name}}}"
+						style="min-height: 150px; min-width: 300px; max-height: 300px; object-fit: cover;"
+					/>
+					<div class="card-body">
+						<h5 class="card-title">
+							{{{name}}}
+						</h5>
+						<p class="card-text">
+							{{{short}}}
+						</p>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>

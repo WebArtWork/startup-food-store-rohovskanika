@@ -1,0 +1,106 @@
+<script type="module">
+	import Product from '/api/wjst/product';
+	import Dom from '/api/wjst/dom';
+	Product.perPage = 10;
+	let page = 1;
+
+	if ((await Product.page(1)).length < Product.perPage) {
+		Dom.remove('loadProducts');
+	}
+
+	document.getElementById('loadProducts').addEventListener('click', async () => {
+		page++;
+		const products = await Product.page(page);
+
+		if (products.length < Product.perPage) {
+			Dom.remove('loadProducts');
+		}
+		for (const product of products) {
+			if (!product.thumbs) {
+				product.thumbs = [];
+			}
+			Dom.add('products', Dom.template('product', {
+				thumb: product.thumb,
+				thumbs: product.thumbs.map(thumb => {
+					return Dom.template('product_thumb', {
+						name: product.name,
+						thumb
+					})
+				}),
+				name: product.name,
+				_id: product._id,
+				short: product.short,
+				description: product.description
+			}));
+		}
+	});
+</script>
+
+<div class="container-new">
+	<div>
+		<h1>{{{translate("Rohovskanika.Products")}}}</h1>
+	<a href="#page-sample" class="btn btn-circle page-scroll">
+		<i class="fa fa-angle-double-down animated"></i>
+	</a>
+</div>
+<!-- Page Sample Section -->
+<section id="page-sample">
+	<div class="polosar">
+		<div class="container content-section text-center">
+			<div class="row" id="products">
+				{% for product in products %}
+				<div class="img-slider">
+					<div class="col-md-4">
+						<a href="/product/{{{product.id}}}">
+							<div class="card">
+								<img
+									src="{{{product.thumb}}}"
+									alt="{{{product.name}}}"
+									style="min-height: 150px; min-width: 300px; max-height: 300px; object-fit: cover;"
+								/>
+								<div class="card-body">
+									<h5 class="card-title">
+										{{{product.name}}}
+									</h5>
+									<p class="card-text">
+										{{{product.short}}}
+									</p>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+
+			<button class="load-more" id="loadProducts">
+				{{{translate("Rohovskanika.Load more")}}}
+			</button>
+		</div>
+	</div>
+</section>
+</div>
+<div id="template-product">
+<div class="img-slider"  style="display: none;" >
+	<div class="col-md-4">
+		<a href="/product/{_id}">
+			<div class="card">
+				<img
+					src="{{{thumb}}}"
+					alt="{{{name}}}"
+					width="700px"
+					class="img-rounded"
+				/>
+				<div class="card-body">
+					<h5 class="card-title">
+						{{{name}}}
+					</h5>
+					<p class="card-text">
+						{{{short}}}
+					</p>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+</div>
