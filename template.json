@@ -10,17 +10,11 @@
 	"variables": {
 		"primary_color": "#AF0000;",
 		"ceo_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-		"logo_text": "FooD",
+		"logo_text": "Food in Ca",
 		"intro_bg": "/rohovskanika/img/food_bg.jpg",
-		"bg_section": "/rohovskanika/img/food_bg2.jpg",
-		"land_decor": "1",
-		"land_head_text": "Food",
-		"land_head_text2": "Welcome to our universal portal for pets and their owners!",
-		"contact_text": " Don't forget to subscribe to our newsletters and social networks",
-		"email_text": "ceo@webart.work",
-		"link_instagram": "https://instagram.com/kpcity2023?igshid=OGQ5ZDc2ODk2ZA==",
-		"link_facebook": "https://www.facebook.com/profile.php?id=100094157589278",
-		"link_telegram": "https://t.me/wawkpcity"
+		"bg_section": "/rohovskanika/img/about-05.jpg",
+		"bg_body":"/rohovskanika/img/simple-house-03.jpg",
+		"short_text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do."
 	},
 	"store": {
 		"name": "Store Name",
