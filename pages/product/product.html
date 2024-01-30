@@ -1,24 +1,44 @@
-<div class="container-new">
-		<h1>{{{translate("Rohovskanika.Product")}}}</h1>
-		<a href="#page-sample" class="btn btn-circle page-scroll">
-			<i class="fa fa-angle-double-down animated"></i>
-		</a>
-</div>
-
-<!-- Page Sample Section -->
-<section id="page-sample">
-	<div class="container content-section text-center">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<a href="/product/{{{product.id}}}">
-						<div class="card">
-							<img src="{{{product.thumb}}}" alt="{{{product.name}}}">
-							<h2 class="text-center">{{{product.name}}}</h2>
-							<h3>{{{product.price}}}</h3>
-							<h4>{{{product.description}}}</h4>
+<div class="container">
+	<!-- Top box -->
+		<!-- Logo & Site Name -->
+		<div class="placeholder">
+			<div class="parallax-window" data-parallax="scroll" data-image-src="img/simple-house-01.jpg">
+				<div class="tm-header">
+					<div class="row tm-header-inner">
+						<div class="col-md-6 col-12">
+							<img src="/rohovskanika/img/simple-house-logo.png" alt="Logo" class="tm-site-logo" /> 
+							<div class="tm-site-text-box">
+								<h1 class="tm-site-title">{{{variables.logo_text}}}</h1>
+								<h6 class="tm-site-description">new restaurant template</h6>	
+							</div>
 						</div>
+					</div>
 				</div>
-				</a>
 			</div>
 		</div>
-</section>
+		<main>
+
+				<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+						<figure class="product_block">
+							<img src="{{{product.thumb}}}" alt="Image" />
+							<figcaption>
+								<h4 class="tm-gallery-title">{{{product.name}}}</h4>
+                                <p class="tm-gallery-description">{{{product.short}}}</p>
+                                <p class="tm-gallery-price">{{{product.price}}}</p>
+							</figcaption>
+						</figure>
+				</div> 
+	<script>
+		$(document).ready(function(){
+			// Handle click on paging links
+			$('.tm-paging-link').click(function(e){
+				e.preventDefault();
+				
+				var page = $(this).text().toLowerCase();
+				$('.tm-gallery-page').addClass('hidden');
+				$('#tm-gallery-page-' + page).removeClass('hidden');
+				$('.tm-paging-link').removeClass('active');
+				$(this).addClass("active");
+			});
+		});
+	</script>

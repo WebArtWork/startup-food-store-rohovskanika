@@ -57,19 +57,5 @@
         	"thumb": "/rohovskanika/img/gallery/08.jpg",
 			"name": "product"
 		}
-	],
-	"groups": [
-		{
-			"categories": [
-				{
-					"name": "Category Name",
-					"tags": [
-						{
-							"name": "Tag Name"
-						}
-					]
-				}
-			]
-		}
 	]
 }
