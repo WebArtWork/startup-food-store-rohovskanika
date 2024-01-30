@@ -862,3 +862,14 @@ address {
   margin: 0 auto;
   text-align: center;
 }
+
+.back-arrow {
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  color: #1d6e46; /* Змініть колір за потреби */
+}
+
+.back-arrow:hover {
+  color: #09C;
+}
