@@ -25,7 +25,7 @@
 			<div class="tm-paging-links">
 				<nav>
 					<ul>
-						{% for tag in productsByTag %}
+						{% for tag in tags %}
 						<li class="tm-paging-item"><a href="/products/{{{tag.id}}}" class="tm-paging-link active">{{{tag.name}}}</a></li>
 					</ul>
 				</nav>

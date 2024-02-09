@@ -1,43 +1,24 @@
 {
   "name": "products",
-  "productsByTag": [
-    {
-      "name": "Pizza",
-      "tags": [
-        {
-          "url": "/product",
-          "short": "Матові",
-          "thumb": "rohovskanika/img/gallery/02.jpg",
-		  "price":"120",
-          "name": "Mocarelaі"
-        },
-        {
-          "url": "/product",
-          "short": "Сатинові",
-		  "price":"120",
-          "thumb": "rohovskanika/img/gallery/02.jpg",
-          "name": "Gawawii"
-        }
-      ]
-    },
-    {
-      "name": "Salat",
-      "tags": [
-        {
-          "url": "/product",
-          "short": "Матові",
-		  "price":"120",
-          "thumb": "rohovskanika/img/gallery/01.jpg",
-          "name": "Mocarelaі"
-        },
-        {
-          "url": "/product",
-          "short": "Сатинові",
-		  "price":"120",
-          "thumb": "rohovskanika/img/gallery/01.jpg",
-          "name": "Gawawii"
-        }
-      ]
-    }
+  "tags": [
+	{
+		"products": [
+			{
+				"url": "/product",
+				"short": "Матові",
+				"thumb": "rohovskanika/img/gallery/02.jpg",
+				"price":"120",
+				"name": "Mocarelaі"
+			},
+			{
+				"url": "/product",
+				"short": "Сатинові",
+				"price":"120",
+				"thumb": "rohovskanika/img/gallery/02.jpg",
+				"name": "Gawawii"
+			  }
+			
+		]
+	}
   ]
 }
