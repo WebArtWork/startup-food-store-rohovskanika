@@ -25,10 +25,8 @@
 			<div class="tm-paging-links">
 				<nav>
 					<ul>
-						<li class="tm-paging-item"><a href="#" class="tm-paging-link active">All</a></li>
-						<li class="tm-paging-item"><a href="#" class="tm-paging-link">Pizza</a></li>
-						<li class="tm-paging-item"><a href="#" class="tm-paging-link">Salad</a></li>
-						<li class="tm-paging-item"><a href="#" class="tm-paging-link">Noodle</a></li>
+						{% for tag in productsByTag %}
+						<li class="tm-paging-item"><a href="/products/{{{tag.id}}}" class="tm-paging-link active">{{{tag.name}}}</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -37,7 +35,7 @@
 			<div class="row tm-gallery">
 				<!-- gallery page 1 -->
 				<div id="tm-gallery-page-pizza" class="tm-gallery-page">
-					{% for product in products %}
+					{% for product in tag.products %}
 					<a href="/product/{{{product.id}}}">
 					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
 						<figure>
@@ -52,6 +50,7 @@
 				</a>
 					{% endfor %}
 				</div> 
+				{% endfor %}
 				<!-- gallery page 1 -->
 
 			</div>
