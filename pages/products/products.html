@@ -24,16 +24,14 @@
 			
 			<div class="tm-paging-links">
 				<nav>
-					<ul>
-						{% for tag in tags %}
-						<li class="tm-paging-item"><a href="/products/{{{tag.id}}}" class="tm-paging-link active">{{{tag.name}}}</a></li>
-					</ul>
 				</nav>
 			</div>
 
 			<!-- Gallery -->
 			<div class="row tm-gallery">
 				<!-- gallery page 1 -->
+					{% for tag in tags %}
+					<a href="/products/{{{tag.id}}}" class="tm-paging-link active">{{{tag.name}}}</a>
 				<div id="tm-gallery-page-pizza" class="tm-gallery-page">
 					{% for product in tag.products %}
 					<a href="/product/{{{product.id}}}">
