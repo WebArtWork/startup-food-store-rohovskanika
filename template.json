@@ -1,19 +1,17 @@
 {
-	"title": "Welcome to waw Template",
-	"description": "description",
+	"title": "Ласкаво просимо в наш ресторан",
+	"description": "Наш ресторан - це не лише місце для вишуканого обіду чи вечері, але і простір, де час зупиняється, а ви занурюєтеся в атмосферу неперевершеної гостинності.",
 	"keywords": "keywords",
 	"prefix": "/rohovskanika",
-	"picture": "picture",
+	"picture": "/rohovskanika/img/rest.jpg",
 	"author": "author",
 	"moderators": [],
 	"scss": "scss/index.scss",
 	"variables": {
 		"primary_color": "#AF0000;",
-		"ceo_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-		"logo_text": "Food in Ca",
-		"intro_bg": "/rohovskanika/img/food_bg.jpg",
+		"ceo_text": "Ласкаво просимо в наш ресторан - ексклюзивне місце, де гастрономічні враження переплітаються з атмосферою неповторної затишності. Наш заклад призначений для тих, хто цінує вишукані страви, неповторні смакові враження та теплу атмосферу справжнього гастрономічного заходу. ",
 		"bg_section": "/rohovskanika/img/about-05.jpg",
-		"short_text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do."
+		"short_text":"Наш ресторан - це не лише місце для вишуканого обіду чи вечері, але і простір, де час зупиняється, а ви занурюєтеся в атмосферу неперевершеної гостинності. Відчуйте тепло наших стін і насолоджуйтеся кожним моментом."
 	},
 	"store": {
 		"name": "Store Name",

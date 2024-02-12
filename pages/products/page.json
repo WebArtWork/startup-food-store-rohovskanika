@@ -6,7 +6,7 @@
 		"products": [
 			{
 				"url": "/product",
-				"short": "corn, pineapples",
+				"description": "corn, pineapples",
 				"thumb": "rohovskanika/img/gallery/02.jpg",
 				"price":"120",
 				"weight":"300 g",
@@ -14,7 +14,7 @@
 			},
 			{
 				"url": "/product",
-				"short": "corn, pineapples",
+				"description": "corn, pineapples",
 				"price":"120",
 				"weight":"300 g",
 				"thumb": "rohovskanika/img/gallery/02.jpg",
@@ -28,7 +28,7 @@
 		"products": [
 			{
 				"url": "/product",
-				"short": "corn, pineapples",
+				"description": "corn, pineapples",
 				"thumb": "rohovskanika/img/gallery/01.jpg",
 				"price":"120",
 				"weight":"300 g",
@@ -36,7 +36,7 @@
 			},
 			{
 				"url": "/product",
-				"short": "corn, pineapples",
+				"description": "corn, pineapples",
 				"price":"120",
 				"weight":"300 g",
 				"thumb": "rohovskanika/img/gallery/01.jpg",

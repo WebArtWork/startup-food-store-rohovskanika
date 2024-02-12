@@ -8,8 +8,8 @@
 					<div class="col-md-6 col-12">
 						<img src="/rohovskanika/img/simple-house-logo.png" alt="Logo" class="tm-site-logo" />
 						<div class="tm-site-text-box">
-							<h1 class="tm-site-title">{{{variables.logo_text}}}</h1>
-							<h6 class="tm-site-description">new restaurant template</h6>
+							<h1 class="tm-site-title">{{{store.name}}}</h1>
+							<h6 class="tm-site-description">new restaurant</h6>
 						</div>
 					</div>
 				</div>
@@ -19,7 +19,7 @@
 	<main>
 		<header class="row tm-welcome-section">
 			<h2 class="col-12 text-center tm-section-title">
-				Welcome to {{{variables.logo_text}}}
+				{{{store.name}}}
 			</h2>
 			<p class="col-12 text-center">{{{variables.ceo_text}}}</p>
 		</header>
@@ -34,7 +34,7 @@
 						<img src="{{{product.thumb}}}" alt="Image" class="img-fluid tm-gallery-img" />
 						<figcaption>
 							<h4 class="tm-gallery-title">{{{product.name}}}</h4>
-							<p class="tm-gallery-description">{{{product.short}}}</p>
+							<p class="tm-gallery-description">{{{product.description}}}</p>
 							<p class="tm-gallery-price">{{{product.price}}} $ / {{{product.weight}}}</p>
 						</figcaption>
 					</figure>
@@ -49,12 +49,12 @@
 			<div class="row">
 				<div class="col-md-6">
 					<figure class="tm-description-figure">
-						<img src="{{{variables.bg_section}}}" alt="Image" class="img-fluid" />
+						<img src="{{{store.thumb}}}" alt="Image" class="img-fluid" />
 					</figure>
 				</div>
 				<div class="col-md-6">
 					<div class="tm-description-box">
-						<h4 class="tm-gallery-title">{{{variables.logo_text}}}</h4>
+						<h4 class="tm-gallery-title">{{{store.name}}}</h4>
 						<p class="tm-mb-45">{{{variables.short_text}}}</p>
 						<!-- <a href="about.html" class="tm-btn tm-btn-default tm-right">Read More</a> -->
 					</div>

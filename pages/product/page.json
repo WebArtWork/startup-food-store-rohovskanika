@@ -7,6 +7,7 @@
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
         "thumb": "/rohovskanika/img/gallery/01.jpg",
         "thumbs": ["/rohovskanika/img/gallery/01.jpg"],
-		"name": "product"
+		"name": "product",
+		"weight":"300 g"
 	}
 }
