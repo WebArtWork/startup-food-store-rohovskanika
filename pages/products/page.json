@@ -1,49 +1,153 @@
 {
   "name": "products",
   "tags": [
+    {
+      "name": "Піца",
+      "products": [
+        {
+          "url": "/product",
+          "description": "Курка, ананас, сир.",
+          "thumb": "rohovskanika/img/gallery/02.jpg",
+          "price": "120 грн.",
+          "weight": "300 g",
+          "name": "Гавайська"
+        },
+        {
+          "url": "/product",
+          "description": "Моцарела, сир.",
+          "price": "120 грн.",
+          "weight": "300 g",
+          "thumb": "rohovskanika/img/gallery/02.jpg",
+          "name": "Моцарела"
+        },
+        {
+          "url": "/product",
+          "description": "Курка, ананас, сир.",
+          "thumb": "rohovskanika/img/gallery/02.jpg",
+          "price": "120 грн.",
+          "weight": "300 g",
+          "name": "Гавайська"
+        },
+        {
+          "url": "/product",
+          "description": "Моцарела, сир.",
+          "price": "120 грн.",
+          "weight": "300 g",
+          "thumb": "rohovskanika/img/gallery/02.jpg",
+          "name": "Моцарела"
+        }
+      ]
+    },
+    {
+      "name": "Салати",
+      "products": [
+        {
+          "url": "/product",
+          "description": "Курка, помідори.",
+          "thumb": "rohovskanika/img/gallery/01.jpg",
+          "price": "120 грн.",
+          "weight": "300 g",
+          "name": "Цезар"
+        },
+        {
+          "url": "/product",
+          "description": "Курка, гриби, сир.",
+          "price": "120 грн.",
+          "weight": "300 g",
+          "thumb": "rohovskanika/img/gallery/02.jpg",
+          "name": "З грибами"
+        },
+        {
+          "url": "/product",
+          "description": "Курка, ананас, сир.",
+          "thumb": "rohovskanika/img/gallery/01.jpg",
+          "price": "120 грн.",
+          "weight": "300 g",
+          "name": "З ананасами"
+        },
+        {
+          "url": "/product",
+          "description": "Курка, помідори.",
+          "thumb": "rohovskanika/img/gallery/02.jpg",
+          "price": "120 грн.",
+          "weight": "300 g",
+          "name": "Цезар"
+        }
+      ]
+    },
+    {
+      "name": "Гарячі страви",
+      "products": [
+        {
+          "url": "/product",
+          "description": "Фарш, сир.",
+          "thumb": "rohovskanika/img/gallery/08.jpg",
+          "price": "120 грн.",
+          "weight": "300 g",
+          "name": "Варенинки"
+        },
+        {
+          "url": "/product",
+          "description": "Курка.",
+          "price": "120 грн.",
+          "weight": "300 g",
+          "thumb": "rohovskanika/img/gallery/05.jpg",
+          "name": "М'ясні кульки"
+        },
+        {
+          "url": "/product",
+          "description": "Фарш, сир.",
+          "thumb": "rohovskanika/img/gallery/08.jpg",
+          "price": "120 грн.",
+          "weight": "300 g",
+          "name": "Варенинки"
+        },
+        {
+          "url": "/product",
+          "description": "Курка.",
+          "thumb": "rohovskanika/img/gallery/05.jpg",
+          "price": "120 грн.",
+          "weight": "300 g",
+          "name": "М'ясні кульки"
+        }
+      ]
+    },
 	{
-		"name":"pizza",
+		"name": "Напої",
 		"products": [
-			{
-				"url": "/product",
-				"description": "corn, pineapples",
-				"thumb": "rohovskanika/img/gallery/02.jpg",
-				"price":"120",
-				"weight":"300 g",
-				"name": "Mocarelaі"
-			},
-			{
-				"url": "/product",
-				"description": "corn, pineapples",
-				"price":"120",
-				"weight":"300 g",
-				"thumb": "rohovskanika/img/gallery/02.jpg",
-				"name": "Gawawii"
-			  }
-			
+		  {
+			"url": "/product",
+			"description": "Апельсиновий сік, горілка.",
+			"thumb": "rohovskanika/img/gallery/margarita.jpg",
+			"price": "120 грн.",
+			"weight": "300 мл",
+			"name": "Маргарита"
+		  },
+		  {
+			"url": "/product",
+			"description": "Кава, молоко.",
+			"price": "120 грн.",
+			"weight": "300 мл",
+			"thumb": "rohovskanika/img/gallery/coffe.jpg",
+			"name": "Кава"
+		  },
+		  {
+			"url": "/product",
+			"description": "Апельсиновий сік, горілка.",
+			"thumb": "rohovskanika/img/gallery/margarita.jpg",
+			"price": "120 грн.",
+			"weight": "300 мл",
+			"name": "Маргарита"
+		  },
+		  {
+			"url": "/product",
+			"description": "Кава, молоко.",
+			"thumb": "rohovskanika/img/gallery/coffe.jpg",
+			"price": "120 грн.",
+			"weight": "300 мл",
+			"name": "Кава"
+		  }
 		]
-	},
-	{
-		"name":"sallat",
-		"products": [
-			{
-				"url": "/product",
-				"description": "corn, pineapples",
-				"thumb": "rohovskanika/img/gallery/01.jpg",
-				"price":"120",
-				"weight":"300 g",
-				"name": "Mocarelaі"
-			},
-			{
-				"url": "/product",
-				"description": "corn, pineapples",
-				"price":"120",
-				"weight":"300 g",
-				"thumb": "rohovskanika/img/gallery/01.jpg",
-				"name": "Gawawii"
-			  }
-			
-		]
-	}
+	  }
   ]
 }
