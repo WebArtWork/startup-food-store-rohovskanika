@@ -3,7 +3,7 @@
 	"description": "Наш ресторан - це не лише місце для вишуканого обіду чи вечері, але і простір, де час зупиняється, а ви занурюєтеся в атмосферу неперевершеної гостинності.",
 	"keywords": "keywords",
 	"prefix": "/rohovskanika",
-	"picture": "/rohovskanika/img/rest.jpg",
+	"picture": "{{{store.thumb}}}",
 	"author": "author",
 	"moderators": [],
 	"scss": "scss/index.scss",
