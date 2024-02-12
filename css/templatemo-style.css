@@ -400,8 +400,8 @@ p, address {
 .tm-gallery-title {
   font-size: 1.3rem;
   font-weight: 400;
-  color: #1A6692;
-  margin-bottom: 15px;
+  color: #1d5c09;
+  margin-bottom: 10px;
 }
 
 .tm-gallery-description {
@@ -410,7 +410,7 @@ p, address {
 
 .tm-gallery-price {
   font-size: 1.25rem;
-  color: #2F956D;
+  color: #296d52;
   margin-bottom: 60px;
 }
 
@@ -427,6 +427,7 @@ p, address {
 }
 
 .tm-paging-link {
+  margin: 30px 0px;
   padding: 10px 30px;
   display: flex;
   align-items: center;
@@ -438,7 +439,7 @@ p, address {
 
 .tm-paging-link.active,
 .tm-paging-link:hover {
-  background-color: #2F956D;
+  background-color: #1d6e46;
   color: white;
 }
 

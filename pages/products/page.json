@@ -6,15 +6,17 @@
 		"products": [
 			{
 				"url": "/product",
-				"short": "Матові",
+				"short": "corn, pineapples",
 				"thumb": "rohovskanika/img/gallery/02.jpg",
 				"price":"120",
+				"weight":"300 g",
 				"name": "Mocarelaі"
 			},
 			{
 				"url": "/product",
-				"short": "Сатинові",
+				"short": "corn, pineapples",
 				"price":"120",
+				"weight":"300 g",
 				"thumb": "rohovskanika/img/gallery/02.jpg",
 				"name": "Gawawii"
 			  }
@@ -26,15 +28,17 @@
 		"products": [
 			{
 				"url": "/product",
-				"short": "Матові",
+				"short": "corn, pineapples",
 				"thumb": "rohovskanika/img/gallery/01.jpg",
 				"price":"120",
+				"weight":"300 g",
 				"name": "Mocarelaі"
 			},
 			{
 				"url": "/product",
-				"short": "Сатинові",
+				"short": "corn, pineapples",
 				"price":"120",
+				"weight":"300 g",
 				"thumb": "rohovskanika/img/gallery/01.jpg",
 				"name": "Gawawii"
 			  }
