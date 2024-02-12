@@ -211,11 +211,6 @@ p, address {
 }
 
 /* Set width and height in JS */
-.placeholder {
-  width: 100%;
-  min-height: 460px;
-  background-image: #3b6345;
-}
 
 .placeholder-2 {
   width: 100%;
