@@ -869,3 +869,10 @@ address {
 .back-arrow:hover {
   color: #09C;
 }
+.heart{
+  display: flex;
+}
+.heart img{
+  margin-left: 120px;
+  margin-bottom: 15px;
+}
