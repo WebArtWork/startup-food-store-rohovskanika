@@ -6,10 +6,10 @@
 			<div class="tm-header">
 				<div class="row tm-header-inner">
 					<div class="col-md-6 col-12">
-						<img src="/rohovskanika/img/simple-house-logo.png" alt="Logo" class="tm-site-logo" />
+						<img src="{{/rohovskanika/img/simple-house-logo.png}}" alt="Logo" class="tm-site-logo" />
 						<div class="tm-site-text-box">
-							<h1 class="tm-site-title">{{{variables.logo_name}}}</h1>
-							<h6 class="tm-site-description">new restaurant</h6>
+							<h1 class="tm-site-title">{{{store.name}}}</h1>
+							<h6 class="tm-site-description"> {{{variables.type}}} </h6>
 						</div>
 					</div>
 				</div>
@@ -19,9 +19,9 @@
 	<main>
 		<header class="row tm-welcome-section">
 			<h2 class="col-12 text-center tm-section-title">
-				{{{variables.logo_name}}}
+				{{{store.name}}}
 			</h2>
-			<p class="col-12 text-center">Ласкаво просимо в наш ресторан - ексклюзивне місце, де гастрономічні враження переплітаються з атмосферою неповторної затишності. Наш заклад призначений для тих, хто цінує вишукані страви, неповторні смакові враження та теплу атмосферу справжнього гастрономічного заходу. </p>
+			<p class="col-12 text-center">{{{store.description}}} </p>
 		</header>
 
 		{% for tag in tags %}
@@ -54,8 +54,8 @@
 				</div>
 				<div class="col-md-6">
 					<div class="tm-description-box">
-						<h4 class="tm-gallery-title">{{{variables.logo_name}}}</h4>
-						<p class="tm-mb-45">Наш ресторан - це не лише місце для вишуканого обіду чи вечері, але і простір, де час зупиняється, а ви занурюєтеся в атмосферу неперевершеної гостинності. Відчуйте тепло наших стін і насолоджуйтеся кожним моментом.</p>
+						<h4 class="tm-gallery-title">{{{store.name}}}</h4>
+						<p class="tm-mb-45">{{{variables.short_text}}}</p>
 						<!-- <a href="about.html" class="tm-btn tm-btn-default tm-right">Read More</a> -->
 					</div>
 				</div>
