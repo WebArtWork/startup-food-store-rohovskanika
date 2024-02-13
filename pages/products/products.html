@@ -6,7 +6,7 @@
 			<div class="tm-header">
 				<div class="row tm-header-inner">
 					<div class="col-md-6 col-12">
-						<img src="{{/rohovskanika/img/simple-house-logo.png}}" alt="Logo" class="tm-site-logo" />
+						<img src="/rohovskanika/img/simple-house-logo.png" alt="Logo" class="tm-site-logo" />
 						<div class="tm-site-text-box">
 							<h1 class="tm-site-title">{{{store.name}}}</h1>
 							<h6 class="tm-site-description"> {{{variables.type}}} </h6>
@@ -49,14 +49,38 @@
 			<div class="row">
 				<div class="col-md-6">
 					<figure class="tm-description-figure">
-						<img src="{{{variables.bg_main}}}" alt="Image" class="img-fluid" />
+						<img src="{{{variables.bg_second}}}" alt="Image" class="img-fluid" />
 					</figure>
 				</div>
 				<div class="col-md-6">
 					<div class="tm-description-box">
 						<h4 class="tm-gallery-title">{{{store.name}}}</h4>
 						<p class="tm-mb-45">{{{variables.short_text}}}</p>
-						<!-- <a href="about.html" class="tm-btn tm-btn-default tm-right">Read More</a> -->
+						<hr>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="tm-description">
+						<h4 class="tm-gallery-title">WiFi</h4>
+						<p class="tm-mb-45">{{{variables.WIFIpassword}}}</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="tm-description">
+						<h4 class="tm-gallery-title">Робочий час:</h4>
+						<p class="tm-mb-45">{{{variables.workingHours}}}</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="tm-description">
+						<h4 class="tm-gallery-title">Телефон:</h4>
+						<p class="tm-mb-45">{{{variables.phone}}}</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="tm-description">
+						<h4 class="tm-gallery-title">Адреса:</h4>
+						<p class="tm-mb-45">{{{variables.address}}}</p>
 					</div>
 				</div>
 			</div>
