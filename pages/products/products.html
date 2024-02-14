@@ -32,8 +32,8 @@
 						<img src="{{{product.thumb}}}" alt="Image" class="img-fluid tm-gallery-img" />
 					</a>
 					<figcaption>
+						<h4 class="tm-gallery-title">{{{product.name}}}</h4>
 						<div class="heart" id="productId" productId="{{{product.id}}}">
-							<h4 class="tm-gallery-title">{{{product.name}}}</h4>
 							<div class="{{{(productFavorited && productFavorited(product.id)) ? 'productFavorited' : ''}}}"
 								productId="{{{product.id}}}">
 								{{{product.favorited || 0}}}
@@ -56,51 +56,18 @@
 			import Dom from "/api/wjst/dom";
 			import Productfavorite from "/api/wjst/productfavorite";
 			Dom.click("productId", (element) => {
-				console.log("test");
 				if (element.classList.contains("productFavorited")) {
-					element.innerHTML.children[0] =
-						Number(element.innerHTML.children[0]) - 1;
-					console.log(element.innerHTML.children[0]);
+					element.children[0].textContent =
+						Number(element.textContent.children[0]) - 1;
 					element.classList.remove("productFavorited");
 					Productfavorite.delete({
 						product: element.getAttribute("productId"),
 					});
 				} else {
-					element.innerHTML = Number(element.innerHTML) + 1;
+					console.log(element.children[0].textContent)
+					element.children[0].textContent =
+						Number(element.children[0].textContent || 0) + 1;
 					element.classList.add("productFavorited");
-					Productfavorite.create({
-						product: element.getAttribute("productId"),
-					});
-				}
-				let heartContainer = element.querySelector(".heart");
-
-				if (heartContainer.classList.contains("productFavorited")) {
-					// If already favorited, decrement the value and toggle the heart icons
-					let countElement = heartContainer.querySelector(".count");
-					countElement.textContent = Number(countElement.textContent) - 1;
-
-					let normalHeartIcon = heartContainer.querySelector(".normal-heart");
-					let redHeartIcon = heartContainer.querySelector(".red-heart");
-
-					normalHeartIcon.style.display = "block";
-					redHeartIcon.style.display = "none";
-
-					heartContainer.classList.remove("productFavorited");
-					Productfavorite.delete({
-						product: element.getAttribute("productId"),
-					});
-				} else {
-					// If not favorited, increment the value and toggle the heart icons
-					let countElement = heartContainer.querySelector(".count");
-					countElement.textContent = Number(countElement.textContent) + 1;
-
-					let normalHeartIcon = heartContainer.querySelector(".normal-heart");
-					let redHeartIcon = heartContainer.querySelector(".red-heart");
-
-					normalHeartIcon.style.display = "none";
-					redHeartIcon.style.display = "block";
-
-					heartContainer.classList.add("productFavorited");
 					Productfavorite.create({
 						product: element.getAttribute("productId"),
 					});
