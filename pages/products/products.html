@@ -9,7 +9,7 @@
 						<img src="/rohovskanika/img/simple-house-logo.png" alt="Logo" class="tm-site-logo" />
 						<div class="tm-site-text-box">
 							<h1 class="tm-site-title">{{{store.name}}}</h1>
-							<h6 class="tm-site-description"> {{{variables.type}}} </h6>
+							<h6 class="tm-site-description">{{{variables.type}}}</h6>
 						</div>
 					</div>
 				</div>
@@ -18,36 +18,95 @@
 	</div>
 	<main>
 		<header class="row tm-welcome-section">
-			<h2 class="col-12 text-center tm-section-title">
-				{{{store.name}}}
-			</h2>
-			<p class="col-12 text-center">{{{store.description}}} </p>
+			<h2 class="col-12 text-center tm-section-title">{{{store.name}}}</h2>
+			<p class="col-12 text-center">{{{store.description}}}</p>
 		</header>
 
 		{% for tag in tags %}
 		<a href="/products/{{{tag.id}}}" class="tm-paging-link active">{{{tag.name}}}</a>
 		<div id="tm-gallery-page-pizza" class="tm-gallery-page">
 			{% for product in tag.products %}
-			<a href="/product/{{{product.id}}}">
-				<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-					<figure>
+			<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+				<figure>
+					<a href="/product/{{{product.id}}}">
 						<img src="{{{product.thumb}}}" alt="Image" class="img-fluid tm-gallery-img" />
-						<figcaption>
-							<div class="heart">
+					</a>
+					<figcaption>
+						<div class="heart" id="productId" productId="{{{product.id}}}">
 							<h4 class="tm-gallery-title">{{{product.name}}}</h4>
-							<img src="/rohovskanika/img/heart.svg">
+							<div class="{{{(productFavorited && productFavorited(product.id)) ? 'productFavorited' : ''}}}"
+								productId="{{{product.id}}}">
+								{{{product.favorited || 0}}}
+								<img src="/rohovskanika/img/heart.svg" class="heart-icon normal-heart" />
+								<img src="/rohovskanika/img/red-heart.svg" class="heart-icon red-heart" />
 							</div>
-							<p class="tm-gallery-description">{{{product.description}}}</p>
-							<p class="tm-gallery-price">{{{product.price}}} / {{{product.weight}}}</p>
-						</figcaption>
-					</figure>
-				</article>
-			</a>
+						</div>
+						<p class="tm-gallery-description">{{{product.description}}}</p>
+						<p class="tm-gallery-price">
+							{{{product.price}}} / {{{product.weight}}}
+						</p>
+					</figcaption>
+				</figure>
+			</article>
 			{% endfor %}
 		</div>
 		{% endfor %}
 		<!-- gallery page 1 -->
+		<script type="module">
+			import Dom from "/api/wjst/dom";
+			import Productfavorite from "/api/wjst/productfavorite";
+			Dom.click("productId", (element) => {
+				console.log("test");
+				if (element.classList.contains("productFavorited")) {
+					element.innerHTML.children[0] =
+						Number(element.innerHTML.children[0]) - 1;
+					console.log(element.innerHTML.children[0]);
+					element.classList.remove("productFavorited");
+					Productfavorite.delete({
+						product: element.getAttribute("productId"),
+					});
+				} else {
+					element.innerHTML = Number(element.innerHTML) + 1;
+					element.classList.add("productFavorited");
+					Productfavorite.create({
+						product: element.getAttribute("productId"),
+					});
+				}
+				let heartContainer = element.querySelector(".heart");
 
+				if (heartContainer.classList.contains("productFavorited")) {
+					// If already favorited, decrement the value and toggle the heart icons
+					let countElement = heartContainer.querySelector(".count");
+					countElement.textContent = Number(countElement.textContent) - 1;
+
+					let normalHeartIcon = heartContainer.querySelector(".normal-heart");
+					let redHeartIcon = heartContainer.querySelector(".red-heart");
+
+					normalHeartIcon.style.display = "block";
+					redHeartIcon.style.display = "none";
+
+					heartContainer.classList.remove("productFavorited");
+					Productfavorite.delete({
+						product: element.getAttribute("productId"),
+					});
+				} else {
+					// If not favorited, increment the value and toggle the heart icons
+					let countElement = heartContainer.querySelector(".count");
+					countElement.textContent = Number(countElement.textContent) + 1;
+
+					let normalHeartIcon = heartContainer.querySelector(".normal-heart");
+					let redHeartIcon = heartContainer.querySelector(".red-heart");
+
+					normalHeartIcon.style.display = "none";
+					redHeartIcon.style.display = "block";
+
+					heartContainer.classList.add("productFavorited");
+					Productfavorite.create({
+						product: element.getAttribute("productId"),
+					});
+				}
+			});
+		</script>
 		<div class="tm-section tm-container-inner">
 			<div class="row">
 				<div class="col-md-6">
@@ -59,7 +118,7 @@
 					<div class="tm-description-box">
 						<h4 class="tm-gallery-title">{{{store.name}}}</h4>
 						<p class="tm-mb-45">{{{variables.short_text}}}</p>
-						<hr>
+						<hr />
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -90,7 +149,7 @@
 		</div>
 	</main>
 </div>
-<script>
+<!-- <script>
 	$(document).ready(function () {
 		// Handle click on paging links
 		$(".tm-paging-link").click(function (e) {
@@ -103,4 +162,4 @@
 			$(this).addClass("active");
 		});
 	});
-</script>
+</script> -->

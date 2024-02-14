@@ -872,7 +872,12 @@ address {
 .heart{
   display: flex;
 }
-.heart img{
+.heart img {
+  display: block;
   margin-left: 120px;
   margin-bottom: 15px;
+}
+
+.heart .red-heart {
+  display: none;
 }
