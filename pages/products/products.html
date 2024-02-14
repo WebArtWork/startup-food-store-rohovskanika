@@ -36,7 +36,7 @@
 						<div class="heart" id="productId" productId="{{{product.id}}}">
 							<div class="{{{(productFavorited && productFavorited(product.id)) ? 'productFavorited' : ''}}}"
 								productId="{{{product.id}}}">
-								{{{product.favorited || 0}}}
+								<div class="counter">{{{product.favorited || 0}}}</div>
 								<img src="/rohovskanika/img/heart.svg" class="heart-icon normal-heart" />
 								<img src="/rohovskanika/img/red-heart.svg" class="heart-icon red-heart" />
 							</div>
@@ -57,16 +57,16 @@
 			import Productfavorite from "/api/wjst/productfavorite";
 			Dom.click("productId", (element) => {
 				if (element.classList.contains("productFavorited")) {
-					element.children[0].textContent =
-						Number(element.textContent.children[0]) - 1;
+					element.children[0].children[0].textContent =
+						Number(element.children[0].children[0].textContent) - 1;
 					element.classList.remove("productFavorited");
 					Productfavorite.delete({
 						product: element.getAttribute("productId"),
 					});
 				} else {
-					console.log(element.children[0].textContent)
-					element.children[0].textContent =
-						Number(element.children[0].textContent || 0) + 1;
+					console.log(element.children[0].children[0].textContent);
+					element.children[0].children[0].textContent =
+						Number(element.children[0].children[0].textContent || 0) + 1;
 					element.classList.add("productFavorited");
 					Productfavorite.create({
 						product: element.getAttribute("productId"),

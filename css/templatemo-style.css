@@ -869,15 +869,22 @@ address {
 .back-arrow:hover {
   color: #09C;
 }
+figcaption{
+  display: inline-block;
+}
 .heart{
-  display: flex;
-}
-.heart img {
-  display: block;
-  margin-left: 120px;
-  margin-bottom: 15px;
+  
 }
 
-.heart .red-heart {
 
+.red-heart{
+  display: none;
+}
+.productFavorited{
+  .normal-heart{
+    display: none;
+  }
+  .red-heart{
+    display: block;
+  }
 }
