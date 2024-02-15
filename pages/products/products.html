@@ -57,18 +57,18 @@
 			import Productfavorite from "/api/wjst/productfavorite";
 			Dom.click("productId", (element) => {
 				if (element.classList.contains('productFavorited')) {
-			element.childer[0].innerHTML = Number(element.childer[0].innerHTML) - 1;
-			element.classList.remove('productFavorited');
-			Productfavorite.delete({
-				product: element.getAttribute('productId')
-			});
-		} else {
-			element.childer[0].innerHTML = Number(element.childer[0].innerHTML) + 1;
-			element.classList.add('productFavorited');
-			Productfavorite.create({
-				product: element.getAttribute('productId')
-			});
-		}
+					element.children[0].innerHTML = Number(element.children[0].innerHTML) - 1;
+					element.classList.remove('productFavorited');
+					Productfavorite.delete({
+						product: element.getAttribute('productId')
+					});
+				} else {
+					element.children[0].innerHTML = Number(element.children[0].innerHTML) + 1;
+					element.classList.add('productFavorited');
+					Productfavorite.create({
+						product: element.getAttribute('productId')
+					});
+				}
 			});
 		</script>
 		<div class="tm-section tm-container-inner">
