@@ -56,22 +56,19 @@
 			import Dom from "/api/wjst/dom";
 			import Productfavorite from "/api/wjst/productfavorite";
 			Dom.click("productId", (element) => {
-				if (element.classList.contains("productFavorited")) {
-					element.children[0].children[0].textContent =
-						Number(element.children[0].children[0].textContent) - 1;
-					element.classList.remove("productFavorited");
-					Productfavorite.delete({
-						product: element.getAttribute("productId"),
-					});
-				} else {
-					console.log(element.children[0].children[0].textContent);
-					element.children[0].children[0].textContent =
-						Number(element.children[0].children[0].textContent || 0) + 1;
-					element.classList.add("productFavorited");
-					Productfavorite.create({
-						product: element.getAttribute("productId"),
-					});
-				}
+				if (element.classList.contains('productFavorited')) {
+			element.childer[0].innerHTML = Number(element.childer[0].innerHTML) - 1;
+			element.classList.remove('productFavorited');
+			Productfavorite.delete({
+				product: element.getAttribute('productId')
+			});
+		} else {
+			element.childer[0].innerHTML = Number(element.childer[0].innerHTML) + 1;
+			element.classList.add('productFavorited');
+			Productfavorite.create({
+				product: element.getAttribute('productId')
+			});
+		}
 			});
 		</script>
 		<div class="tm-section tm-container-inner">
