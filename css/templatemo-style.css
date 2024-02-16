@@ -885,8 +885,8 @@ figcaption{
   display: inline-block;
 }
 .counter{
-  display: inline-block;
-  font-size: 12px;
+  font-size: 10px;
+  margin-left: 25px;
 }
 
 .red-heart{
