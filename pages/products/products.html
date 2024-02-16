@@ -30,6 +30,7 @@
 				<figure>
 					<a href="/product/{{{product.id}}}">
 						<img src="{{{product.thumb}}}" alt="Image" class="img-fluid tm-gallery-img" />
+					</a>
 					<figcaption>
 						<div class="tm-gallery-title">{{{product.name}}} <div class="heart">
 							<div class="{{{(productFavorited && productFavorited(product.id)) ? 'productFavorited' : ''}}}"
@@ -41,7 +42,6 @@
 							</div>
 							</div>
 						</div></div>
-					</a>
 						<p class="tm-gallery-description">{{{product.description}}}</p>
 						<p class="tm-gallery-price">
 							{{{product.price}}} грн / {{{product.weight}}} г/мл
