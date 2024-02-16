@@ -16,23 +16,23 @@
           "url": "/product",
           "description": "Курка, ананас, сир.",
           "thumb": "rohovskanika/img/gallery/02.jpg",
-          "price": "120 грн.",
-          "weight": "300 g",
+          "price": "120",
+          "weight": "300",
           "name": "Гавайська"
         },
         {
           "url": "/product",
           "description": "Моцарела, сир.",
-          "price": "120 грн.",
-          "weight": "300 g",
+          "price": "120",
+          "weight": "300",
           "thumb": "rohovskanika/img/gallery/pizza2.jpg",
           "name": "Моцарела"
         },
         {
           "url": "/product",
           "description": "Моцарела, сир.",
-          "price": "120 грн.",
-          "weight": "300 g",
+          "price": "120",
+          "weight": "300",
           "thumb": "rohovskanika/img/gallery/pizza4.jpg",
           "name": "Моцарела"
         }
@@ -45,15 +45,15 @@
           "url": "/product",
           "description": "Ківі, ягоди.",
           "thumb": "rohovskanika/img/gallery/salat1.jpg",
-          "price": "120 грн.",
-          "weight": "300 g",
+          "price": "120",
+          "weight": "300",
           "name": "Фруктовий"
         },
         {
           "url": "/product",
           "description": "Курка, гриби, сир.",
-          "price": "120 грн.",
-          "weight": "300 g",
+          "price": "120",
+          "weight": "300",
           "thumb": "rohovskanika/img/gallery/salat4.jpg",
           "name": "З грибами"
         },
@@ -61,16 +61,16 @@
           "url": "/product",
           "description": "Курка, ананас, сир.",
           "thumb": "rohovskanika/img/gallery/salat3.jpg",
-          "price": "120 грн.",
-          "weight": "300 g",
+          "price": "120",
+          "weight": "300",
           "name": "З ананасами"
         },
         {
           "url": "/product",
           "description": "Ківі, ягоди.",
           "thumb": "rohovskanika/img/gallery/salat1.jpg",
-          "price": "120 грн.",
-          "weight": "300 g",
+          "price": "120",
+          "weight": "300",
           "name": "Фруктовий"
         }
       ]
@@ -82,15 +82,15 @@
           "url": "/product",
           "description": "Фарш, сир.",
           "thumb": "rohovskanika/img/gallery/08.jpg",
-          "price": "120 грн.",
-          "weight": "300 g",
+          "price": "120",
+          "weight": "300",
           "name": "Варенинки"
         },
         {
           "url": "/product",
           "description": "Курка.",
-          "price": "120 грн.",
-          "weight": "300 g",
+          "price": "120",
+          "weight": "300",
           "thumb": "rohovskanika/img/gallery/05.jpg",
           "name": "М'ясні кульки"
         },
@@ -98,16 +98,16 @@
           "url": "/product",
           "description": "Фарш, сир.",
           "thumb": "rohovskanika/img/gallery/08.jpg",
-          "price": "120 грн.",
-          "weight": "300 g",
+          "price": "120",
+          "weight": "300",
           "name": "Варенинки"
         },
         {
           "url": "/product",
           "description": "Курка.",
           "thumb": "rohovskanika/img/gallery/05.jpg",
-          "price": "120 грн.",
-          "weight": "300 g",
+          "price": "120",
+          "weight": "300",
           "name": "М'ясні кульки"
         }
       ]
@@ -119,14 +119,14 @@
 			"url": "/product",
 			"description": "Апельсиновий сік, горілка.",
 			"thumb": "rohovskanika/img/gallery/margarita.jpg",
-			"price": "120 грн.",
+			"price": "120",
 			"weight": "300 мл",
 			"name": "Маргарита"
 		  },
 		  {
 			"url": "/product",
 			"description": "Кава, молоко.",
-			"price": "120 грн.",
+			"price": "120",
 			"weight": "300 мл",
 			"thumb": "rohovskanika/img/gallery/coffe.jpg",
 			"name": "Кава"
@@ -135,7 +135,7 @@
 			"url": "/product",
 			"description": "Апельсиновий сік, горілка.",
 			"thumb": "rohovskanika/img/gallery/margarita.jpg",
-			"price": "120 грн.",
+			"price": "120",
 			"weight": "300 мл",
 			"name": "Маргарита"
 		  },
@@ -143,7 +143,7 @@
 			"url": "/product",
 			"description": "Кава, молоко.",
 			"thumb": "rohovskanika/img/gallery/coffe.jpg",
-			"price": "120 грн.",
+			"price": "120",
 			"weight": "300 мл",
 			"name": "Кава"
 		  }
