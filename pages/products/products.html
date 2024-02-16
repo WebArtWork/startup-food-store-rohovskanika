@@ -33,18 +33,18 @@
 					</a>
 					<figcaption>
 						<h4 class="tm-gallery-title">{{{product.name}}}</h4>
-						<div class="heart">
-							<div class="{{{(productFavorited && productFavorited(product.id)) ? 'productFavorited' : ''}}}"
-								productId="{{{product.id}}}">
-								<img src="/rohovskanika/img/heart.svg" class="heart-icon normal-heart" />
-								<img src="/rohovskanika/img/red-heart.svg" class="heart-icon red-heart" />
-								<div class="counter">{{{product.favorited || 0}}}</div>
+						<p class="tm-gallery-description">{{{product.description}}}</p>
+						<div class="tm-gallery-price">
+							{{{product.price}}} грн / {{{product.weight}}} г.мл
+							<div class="heart">
+								<div class="{{{(productFavorited && productFavorited(product.id)) ? 'productFavorited' : ''}}}"
+									productId="{{{product.id}}}">
+									<img src="/rohovskanika/img/heart.svg" class="heart-icon normal-heart" />
+									<img src="/rohovskanika/img/red-heart.svg" class="heart-icon red-heart" />
+									<div class="counter">{{{product.favorited || 0}}}</div>
+								</div>
 							</div>
 						</div>
-						<p class="tm-gallery-description">{{{product.description}}}</p>
-						<p class="tm-gallery-price">
-							{{{product.price}}} / {{{product.weight}}}
-						</p>
 					</figcaption>
 				</figure>
 			</article>

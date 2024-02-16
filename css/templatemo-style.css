@@ -415,6 +415,7 @@ p, address {
   font-size: 1.25rem;
   color: #296d52;
   margin-bottom: 60px;
+  display: inline-block;
 }
 
 .tm-paging-links {
@@ -882,7 +883,6 @@ figcaption{
 }
 .heart{
   display: inline-block;
-  margin-left: 100px;
 }
 .counter{
   display: inline-block;

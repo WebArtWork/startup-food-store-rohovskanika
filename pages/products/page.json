@@ -8,8 +8,8 @@
           "url": "/product",
           "description": "Салямі, сир.",
           "thumb": "rohovskanika/img/gallery/pizza3.jpg",
-          "price": "120 грн.",
-          "weight": "300 g",
+          "price": "120",
+          "weight": "300",
           "name": "Папероні"
         },
         {
