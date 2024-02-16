@@ -400,11 +400,10 @@ p, address {
 }
 
 .tm-gallery-title {
-  display: inline-block;
+  display: inline-flex;
   font-size: 1.3rem;
   font-weight: 400;
   color: #1d5c09;
-  margin-bottom: 10px;
 }
 
 .tm-gallery-description {
@@ -878,15 +877,19 @@ address {
 .back-arrow:hover {
   color: #09C;
 }
-figcaption{
-  display: inline-block;
-}
+
 .heart{
-  display: inline-block;
+  display: block;
+}
+.hearts{
+  position: absolute;
+  bottom: 139px;
+  margin-left: 10px;
 }
 .counter{
   font-size: 10px;
-  margin-left: 25px;
+  margin-left: 19px;
+  margin-top: 6px;
 }
 
 .red-heart{

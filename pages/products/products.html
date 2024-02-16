@@ -31,16 +31,17 @@
 					<a href="/product/{{{product.id}}}">
 						<img src="{{{product.thumb}}}" alt="Image" class="img-fluid tm-gallery-img" />
 					<figcaption>
-						<h4 class="tm-gallery-title">{{{product.name}}}</h4>
-					</a>
-						<div class="heart">
+						<div class="tm-gallery-title">{{{product.name}}} <div class="heart">
 							<div class="{{{(productFavorited && productFavorited(product.id)) ? 'productFavorited' : ''}}}"
 								productId="{{{product.id}}}">
 								<div class="counter">{{{product.favorited || 0}}}</div>
+								<div class="hearts">
 								<img src="/rohovskanika/img/heart.svg" class="heart-icon normal-heart" />
 								<img src="/rohovskanika/img/red-heart.svg" class="heart-icon red-heart" />
 							</div>
-						</div>
+							</div>
+						</div></div>
+					</a>
 						<p class="tm-gallery-description">{{{product.description}}}</p>
 						<p class="tm-gallery-price">
 							{{{product.price}}} грн / {{{product.weight}}} г/мл
