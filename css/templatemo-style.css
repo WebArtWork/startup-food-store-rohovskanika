@@ -190,8 +190,15 @@ html {
 }
 
 .img-fluid {
-  max-width: 100%;
-  height: auto;
+  width: 250px;
+  height: 250px; 
+  object-fit: cover;
+  border-radius: 10px;
+}
+.img-fluid-2 {
+  width: 500px;
+  height: 200px; 
+  object-fit: cover;
 }
 
 body {
@@ -393,6 +400,7 @@ p, address {
 }
 
 .tm-gallery-title {
+  display: inline-block;
   font-size: 1.3rem;
   font-weight: 400;
   color: #1d5c09;
@@ -873,9 +881,13 @@ figcaption{
   display: inline-block;
 }
 .heart{
-  
+  display: inline-block;
+  margin-left: 100px;
 }
-
+.counter{
+  display: inline-block;
+  font-size: 12px;
+}
 
 .red-heart{
   display: none;

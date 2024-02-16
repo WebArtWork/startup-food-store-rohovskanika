@@ -6,6 +6,14 @@
       "products": [
         {
           "url": "/product",
+          "description": "Салямі, сир.",
+          "thumb": "rohovskanika/img/gallery/pizza3.jpg",
+          "price": "120 грн.",
+          "weight": "300 g",
+          "name": "Папероні"
+        },
+        {
+          "url": "/product",
           "description": "Курка, ананас, сир.",
           "thumb": "rohovskanika/img/gallery/02.jpg",
           "price": "120 грн.",
@@ -17,23 +25,15 @@
           "description": "Моцарела, сир.",
           "price": "120 грн.",
           "weight": "300 g",
-          "thumb": "rohovskanika/img/gallery/02.jpg",
+          "thumb": "rohovskanika/img/gallery/pizza2.jpg",
           "name": "Моцарела"
         },
         {
           "url": "/product",
-          "description": "Курка, ананас, сир.",
-          "thumb": "rohovskanika/img/gallery/02.jpg",
-          "price": "120 грн.",
-          "weight": "300 g",
-          "name": "Гавайська"
-        },
-        {
-          "url": "/product",
           "description": "Моцарела, сир.",
           "price": "120 грн.",
           "weight": "300 g",
-          "thumb": "rohovskanika/img/gallery/02.jpg",
+          "thumb": "rohovskanika/img/gallery/pizza4.jpg",
           "name": "Моцарела"
         }
       ]
@@ -43,35 +43,35 @@
       "products": [
         {
           "url": "/product",
-          "description": "Курка, помідори.",
-          "thumb": "rohovskanika/img/gallery/01.jpg",
+          "description": "Ківі, ягоди.",
+          "thumb": "rohovskanika/img/gallery/salat1.jpg",
           "price": "120 грн.",
           "weight": "300 g",
-          "name": "Цезар"
+          "name": "Фруктовий"
         },
         {
           "url": "/product",
           "description": "Курка, гриби, сир.",
           "price": "120 грн.",
           "weight": "300 g",
-          "thumb": "rohovskanika/img/gallery/02.jpg",
+          "thumb": "rohovskanika/img/gallery/salat4.jpg",
           "name": "З грибами"
         },
         {
           "url": "/product",
           "description": "Курка, ананас, сир.",
-          "thumb": "rohovskanika/img/gallery/01.jpg",
+          "thumb": "rohovskanika/img/gallery/salat3.jpg",
           "price": "120 грн.",
           "weight": "300 g",
           "name": "З ананасами"
         },
         {
           "url": "/product",
-          "description": "Курка, помідори.",
-          "thumb": "rohovskanika/img/gallery/02.jpg",
+          "description": "Ківі, ягоди.",
+          "thumb": "rohovskanika/img/gallery/salat1.jpg",
           "price": "120 грн.",
           "weight": "300 g",
-          "name": "Цезар"
+          "name": "Фруктовий"
         }
       ]
     },
