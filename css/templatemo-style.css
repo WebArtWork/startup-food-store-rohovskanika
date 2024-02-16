@@ -882,6 +882,7 @@ address {
   display: block;
 }
 .hearts{
+  display: block;
   position: absolute;
   bottom: 139px;
   margin-left: 10px;
@@ -900,5 +901,6 @@ address {
   }
   .red-heart{
     display: block;
+    margin-bottom: 6px;
   }
 }
