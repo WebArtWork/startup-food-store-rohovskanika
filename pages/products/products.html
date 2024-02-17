@@ -29,22 +29,25 @@
 			<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
 				<figure>
 					<a href="/product/{{{product.id}}}">
-						<img src="{{{product.thumb}}}" alt="Image" class="img-fluid tm-gallery-img" />
+						<img src="{{ product.thumb ? product.thumb : {{{variables.bg_main}}} }}" alt="Image" class="img-fluid tm-gallery-img" />
 					</a>
-					<figcaption>
-						<div class="tm-gallery-title">{{{product.name}}} <div class="heart">
-							<div class="{{{(productFavorited && productFavorited(product.id)) ? 'productFavorited' : ''}}}"
-								productId="{{{product.id}}}">
-								<div class="counter">{{{product.favorited || 0}}}</div>
-								<div class="hearts">
+					<div class="heart">
+						<div class="{{{(productFavorited && productFavorited(product.id)) ? 'productFavorited' : ''}}}"
+							productId="{{{product.id}}}">
+							<div class="counter">{{{product.favorited || 0}}}</div>
+							<div class="hearts">
 								<img src="/rohovskanika/img/heart.svg" class="heart-icon normal-heart" />
 								<img src="/rohovskanika/img/red-heart.svg" class="heart-icon red-heart" />
 							</div>
-							</div>
-						</div></div>
+						</div>
+					</div>
+					<figcaption>
+						<div class="tm-gallery-title">
+							{{{product.name}}}
+						</div>
 						<p class="tm-gallery-description">{{{product.description}}}</p>
 						<p class="tm-gallery-price">
-							{{{product.price}}} грн / {{{product.weight}}} г/мл
+							{{{product.price}}} грн / {{{product.weight}}}
 						</p>
 					</figcaption>
 				</figure>
@@ -57,17 +60,19 @@
 			import Dom from "/api/wjst/dom";
 			import Productfavorite from "/api/wjst/productfavorite";
 			Dom.click("productId", (element) => {
-				if (element.classList.contains('productFavorited')) {
-					element.children[0].innerHTML = Number(element.children[0].innerHTML) - 1;
-					element.classList.remove('productFavorited');
+				if (element.classList.contains("productFavorited")) {
+					element.children[0].innerHTML =
+						Number(element.children[0].innerHTML) - 1;
+					element.classList.remove("productFavorited");
 					Productfavorite.delete({
-						product: element.getAttribute('productId')
+						product: element.getAttribute("productId"),
 					});
 				} else {
-					element.children[0].innerHTML = Number(element.children[0].innerHTML) + 1;
-					element.classList.add('productFavorited');
+					element.children[0].innerHTML =
+						Number(element.children[0].innerHTML) + 1;
+					element.classList.add("productFavorited");
 					Productfavorite.create({
-						product: element.getAttribute('productId')
+						product: element.getAttribute("productId"),
 					});
 				}
 			});
@@ -76,7 +81,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					<figure class="tm-description-figure">
-						<img src="{{{variables.bg_second}}}" alt="Image" class="img-fluid" />
+						<img src="{{{variables.bg_second}}}" alt="Image" class="img-fluid-2" />
 					</figure>
 				</div>
 				<div class="col-md-6">
@@ -108,6 +113,23 @@
 					<div class="tm-description">
 						<h4 class="tm-gallery-title">Адреса:</h4>
 						<p class="tm-mb-45">{{{variables.address}}}</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="tm-description">
+						<h4 class="tm-gallery-title">Соц-мережі:</h4>
+						<a href="#">
+							<p class="tm-site-logo">
+								<i class="fa fa-instagram" style="color: #3b6345"></i> Instagram
+							</p>
+							|
+						</a>
+						<a href="#">
+							<p class="tm-site-logo">
+								<i class="fa fa-facebook" style="color: #3b6345"></i> Facebook
+							</p>
+							|
+						</a>
 					</div>
 				</div>
 			</div>

@@ -196,7 +196,7 @@ html {
   border-radius: 10px;
 }
 .img-fluid-2 {
-  width: 500px;
+  width: 550px;
   height: 200px; 
   object-fit: cover;
 }
@@ -879,19 +879,19 @@ address {
 }
 
 .heart{
+  position: absolute;
+  top: 0;
+  left: 225px;
   display: block;
+  z-index: 2232;
+  width: 40px;
+  height: 40px;
 }
 .hearts{
   display: block;
   position: absolute;
-  bottom: 139px;
-  margin-left: 10px;
-}
-.counter{
-  font-size: 10px;
-  margin-left: 35px;
-}
 
+}
 .red-heart{
   display: none;
 }
@@ -903,4 +903,10 @@ address {
     display: block;
     margin-bottom: 6px;
   }
+}
+
+.counter{
+  color: #7c7c7c;
+  font-size: 10px;
+  margin-left: 25px;
 }
