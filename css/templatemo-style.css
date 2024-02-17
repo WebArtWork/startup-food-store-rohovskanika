@@ -201,8 +201,8 @@ html {
   object-fit: cover;
 }
 .img-fluid-3 {
-  width: 450px;
-  height: 450px; 
+  width: 250px;
+  height: 250px; 
   object-fit: cover;
   border-radius: 10px;
 }
