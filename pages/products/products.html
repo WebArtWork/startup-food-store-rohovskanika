@@ -17,14 +17,16 @@
 		</div>
 	</div>
 	<main>
+		<div class="sidebar-menu">
+			{% for tag in tags %}
+			<a href="#{{{tag.id}}}">{{{tag.name}}}</a>
+			{% endfor %}
+		</div>
+
 		<header class="row tm-welcome-section">
 			<h2 class="col-12 text-center tm-section-title">{{{store.name}}}</h2>
 			<p class="col-12 text-center">{{{store.description}}}</p>
 		</header>
-		{% for tag in tags %}
-		<a href="#{{{tag.id}}}" class="tm-paging-link active">{{{tag.name}}}</a>
-		<div id="tm-gallery-page-pizza" class="tm-gallery-page">
-		{% endfor %}
 		{% for tag in tags %}
 		<div id="{{{tag.id}}}" class="tm-paging-link active">{{{tag.name}}}</div>
 		<div id="tm-gallery-page-pizza" class="tm-gallery-page">
@@ -32,7 +34,8 @@
 			<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
 				<figure>
 					<a href="/product/{{{product.id}}}">
-						<img src="{{{ product.thumb ? product.thumb : variables.bg_main }}}" alt="Image" class="img-fluid tm-gallery-img" />
+						<img src="{{{product.thumb || variables.bg_main}}}" alt="Image"
+							class="img-fluid tm-gallery-img" />
 					</a>
 					<div class="heart">
 						<div class="{{{(productFavorited && productFavorited(product.id)) ? 'productFavorited' : ''}}}"
@@ -45,9 +48,7 @@
 						</div>
 					</div>
 					<figcaption>
-						<div class="tm-gallery-title">
-							{{{product.name}}}
-						</div>
+						<div class="tm-gallery-title">{{{product.name}}}</div>
 						<p class="tm-gallery-description">{{{product.description}}}</p>
 						<p class="tm-gallery-price">
 							{{{product.price}}} грн / {{{product.weight}}}
