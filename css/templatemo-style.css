@@ -930,12 +930,22 @@ address {
   margin-left: 25px;
 }
 .sidebar-menu {
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 343434;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background-color: #1d6e46;
+  gap: 20px;
   padding: 20px;
   a {
     color: #ffffff;
     font-weight: 550;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .sidebar-menu {
+    display: inherit;
   }
 }
