@@ -8,7 +8,7 @@
 	"moderators": [],
 	"scss": "scss/index.scss",
 	"variables": {
-		"primary_color": "#AF0000;",
+		"primary_color": "white;",
 		"type":"restaurant",
 		"bg_section": "/rohovskanika/img/about-05.jpg",
 		"bg_main":"/rohovskanika/img/rest.jpg",
