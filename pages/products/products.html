@@ -25,7 +25,9 @@
     </div>
   </div>
   <main>
-    <div id="hiddenText" class="hidden-text" class="sidebar-menu row">
+    <button id="toggleSidebarBtn">Меню</button>
+
+    <div class="sidebar-menu row" id="sidebarMenu">
       {% for tag in tags %}
       <div class="col-lg-3">
         <a href="#{{{tag.id}}}">{{{tag.name}}}</a>
@@ -205,20 +207,8 @@
   }
 </script>
 <script>
-  window.onscroll = function () {
-    fadeInText();
-  };
-
-  function fadeInText() {
-    var hiddenText = document.getElementById("hiddenText");
-
-    if (
-      document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20
-    ) {
-      hiddenText.style.opacity = "1";
-    } else {
-      hiddenText.style.opacity = "0";
-    }
-  }
+	document.getElementById("toggleSidebarBtn").addEventListener("click", function() {
+  var sidebarMenu = document.getElementById("sidebarMenu");
+  sidebarMenu.style.display = (sidebarMenu.style.display === "none" || sidebarMenu.style.display === "") ? "block" : "none";
+});
 </script>
