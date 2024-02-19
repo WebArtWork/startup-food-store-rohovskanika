@@ -250,7 +250,13 @@ address {
   background: transparent;
   position: relative;
 }
-
+@media (max-width: 991px) {
+  .parallax-window {
+    min-height: 260px;
+    background: transparent;
+    position: relative;
+  }
+}
 .parallax-window-2 {
   min-height: 220px;
   width: 100%;
@@ -944,4 +950,17 @@ address {
   .sidebar-menu {
     display: inherit;
   }
+
+}
+#scrollToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #1153229a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
 }
