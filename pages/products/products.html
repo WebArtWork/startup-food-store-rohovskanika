@@ -25,13 +25,10 @@
     </div>
   </div>
   <main>
-    <button id="toggleSidebarBtn">Натисни, щоб переглянути меню.</button>
 
-    <div class="sidebar-menu row" id="sidebarMenu">
+    <div class="sidebar-menu">
       {% for tag in tags %}
-      <div class="col-md-3">
         <a href="#{{{tag.id}}}">{{{tag.name}}}</a>
-      </div>
       {% endfor %}
     </div>
 
@@ -205,10 +202,4 @@
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
   }
-</script>
-<script>
-	document.getElementById("toggleSidebarBtn").addEventListener("click", function() {
-  var sidebarMenu = document.getElementById("sidebarMenu");
-  sidebarMenu.style.display = (sidebarMenu.style.display === "none" || sidebarMenu.style.display === "") ? "block" : "none";
-});
 </script>
