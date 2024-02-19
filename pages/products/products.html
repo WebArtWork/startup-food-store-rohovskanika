@@ -1,148 +1,170 @@
 <div class="container">
-	<!-- Top box -->
-	<!-- Logo & Site Name -->
-	<div class="placeholder">
-		<div class="parallax-window" data-parallax="scroll" data-image-src="img/simple-house-01.jpg">
-			<div class="tm-header">
-				<div class="row tm-header-inner">
-					<div class="col-md-6 col-12">
-						<img src="/rohovskanika/img/simple-house-logo.png" alt="Logo" class="tm-site-logo" />
-						<div class="tm-site-text-box">
-							<h1 class="tm-site-title">{{{store.name}}}</h1>
-							<h6 class="tm-site-description">{{{variables.type}}}</h6>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<main>
-		
-		<div class="sidebar-menu row">
-			{% for tag in tags %}
-			<div class="col-lg-3">
-			<a href="#{{{tag.id}}}">{{{tag.name}}}</a>
-		</div>
-			{% endfor %}
-		</div>
+  <!-- Top box -->
+  <!-- Logo & Site Name -->
+  <div class="placeholder">
+    <div
+      class="parallax-window"
+      data-parallax="scroll"
+      data-image-src="img/simple-house-01.jpg"
+    >
+      <div class="tm-header">
+        <div class="row tm-header-inner">
+          <div class="col-md-6 col-12">
+            <img
+              src="/rohovskanika/img/simple-house-logo.png"
+              alt="Logo"
+              class="tm-site-logo"
+            />
+            <div class="tm-site-text-box">
+              <h1 class="tm-site-title">{{{store.name}}}</h1>
+              <h6 class="tm-site-description">{{{variables.type}}}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main>
+    <div class="sidebar-menu row">
+      {% for tag in tags %}
+      <div class="col-lg-3" id="hiddenText" class="hidden-text">
+        <a href="#{{{tag.id}}}">{{{tag.name}}}</a>
+      </div>
+      {% endfor %}
+    </div>
 
-		<header class="row tm-welcome-section">
-			<h2 class="col-12 text-center tm-section-title">{{{store.name}}}</h2>
-			<p class="col-12 text-center">{{{store.description}}}</p>
-		</header>
-		{% for tag in tags %}
-		<div id="{{{tag.id}}}" class="tm-paging-link active">{{{tag.name}}}</div>
-		<div id="tm-gallery-page-pizza" class="tm-gallery-page">
-			{% for product in tag.products %}
-			<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-				<figure>
-					<a href="/product/{{{product.id}}}">
-						<img src="{{{product.thumb || variables.bg_main}}}" alt="Image"
-							class="img-fluid tm-gallery-img" />
-					</a>
-					<div class="heart">
-						<div class="{{{(productFavorited && productFavorited(product.id)) ? 'productFavorited' : ''}}}"
-							productId="{{{product.id}}}">
-							<div class="counter">{{{product.favorited || 0}}}</div>
-							<div class="hearts">
-								<img src="/rohovskanika/img/heart.svg" class="heart-icon normal-heart" />
-								<img src="/rohovskanika/img/red-heart.svg" class="heart-icon red-heart" />
-							</div>
-						</div>
-					</div>
-					<figcaption>
-						<div class="tm-gallery-title">{{{product.name}}}</div>
-						<p class="tm-gallery-description">{{{product.description}}}</p>
-						<p class="tm-gallery-price">
-							{{{product.price}}} грн / {{{product.weight}}}
-						</p>
-					</figcaption>
-				</figure>
-			</article>
-			{% endfor %}
-		</div>
-		{% endfor %}
-		<button id="scrollToTopBtn" onclick="scrollToTop()">Вверх</button>
-		<!-- gallery page 1 -->
-		<script type="module">
-			import Dom from "/api/wjst/dom";
-			import Productfavorite from "/api/wjst/productfavorite";
-			Dom.click("productId", (element) => {
-				if (element.classList.contains("productFavorited")) {
-					element.children[0].innerHTML =
-						Number(element.children[0].innerHTML) - 1;
-					element.classList.remove("productFavorited");
-					Productfavorite.delete({
-						product: element.getAttribute("productId"),
-					});
-				} else {
-					element.children[0].innerHTML =
-						Number(element.children[0].innerHTML) + 1;
-					element.classList.add("productFavorited");
-					Productfavorite.create({
-						product: element.getAttribute("productId"),
-					});
-				}
-			});
-		</script>
-		<div class="tm-section tm-container-inner">
-			<div class="row">
-				<div class="col-md-6">
-					<figure class="tm-description-figure">
-						<img src="{{{variables.bg_second}}}" alt="Image" class="img-fluid-2" />
-					</figure>
-				</div>
-				<div class="col-md-6">
-					<div class="tm-description-box">
-						<h4 class="tm-gallery-title">{{{store.name}}}</h4>
-						<p class="tm-mb-45">{{{variables.short_text}}}</p>
-						<hr />
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="tm-description">
-						<h4 class="tm-gallery-title">WiFi</h4>
-						<p class="tm-mb-45">{{{variables.WIFIpassword}}}</p>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="tm-description">
-						<h4 class="tm-gallery-title">Робочий час:</h4>
-						<p class="tm-mb-45">{{{variables.workingHours}}}</p>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="tm-description">
-						<h4 class="tm-gallery-title">Телефон:</h4>
-						<p class="tm-mb-45">{{{variables.phone}}}</p>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="tm-description">
-						<h4 class="tm-gallery-title">Адреса:</h4>
-						<p class="tm-mb-45">{{{variables.address}}}</p>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="tm-description">
-						<h4 class="tm-gallery-title">Соц-мережі:</h4>
-						<a href="#">
-							<p class="tm-site-logo">
-								<i class="fa fa-instagram" style="color: #3b6345"></i> Instagram
-							</p>
-							|
-						</a>
-						<a href="#">
-							<p class="tm-site-logo">
-								<i class="fa fa-facebook" style="color: #3b6345"></i> Facebook
-							</p>
-							|
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</main>
+    <header class="row tm-welcome-section">
+      <h2 class="col-12 text-center tm-section-title">{{{store.name}}}</h2>
+      <p class="col-12 text-center">{{{store.description}}}</p>
+    </header>
+    {% for tag in tags %}
+    <div id="{{{tag.id}}}" class="tm-paging-link active">{{{tag.name}}}</div>
+    <div id="tm-gallery-page-pizza" class="tm-gallery-page">
+      {% for product in tag.products %}
+      <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+        <figure>
+          <a href="/product/{{{product.id}}}">
+            <img
+              src="{{{product.thumb || variables.bg_main}}}"
+              alt="Image"
+              class="img-fluid tm-gallery-img"
+            />
+          </a>
+          <div class="heart">
+            <div
+              class="{{{(productFavorited && productFavorited(product.id)) ? 'productFavorited' : ''}}}"
+              productId="{{{product.id}}}"
+            >
+              <div class="counter">{{{product.favorited || 0}}}</div>
+              <div class="hearts">
+                <img
+                  src="/rohovskanika/img/heart.svg"
+                  class="heart-icon normal-heart"
+                />
+                <img
+                  src="/rohovskanika/img/red-heart.svg"
+                  class="heart-icon red-heart"
+                />
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <div class="tm-gallery-title">{{{product.name}}}</div>
+            <p class="tm-gallery-description">{{{product.description}}}</p>
+            <p class="tm-gallery-price">
+              {{{product.price}}} грн / {{{product.weight}}}
+            </p>
+          </figcaption>
+        </figure>
+      </article>
+      {% endfor %}
+    </div>
+    {% endfor %}
+    <button id="scrollToTopBtn" onclick="scrollToTop()">Вверх</button>
+    <!-- gallery page 1 -->
+    <script type="module">
+      import Dom from "/api/wjst/dom";
+      import Productfavorite from "/api/wjst/productfavorite";
+      Dom.click("productId", (element) => {
+        if (element.classList.contains("productFavorited")) {
+          element.children[0].innerHTML =
+            Number(element.children[0].innerHTML) - 1;
+          element.classList.remove("productFavorited");
+          Productfavorite.delete({
+            product: element.getAttribute("productId"),
+          });
+        } else {
+          element.children[0].innerHTML =
+            Number(element.children[0].innerHTML) + 1;
+          element.classList.add("productFavorited");
+          Productfavorite.create({
+            product: element.getAttribute("productId"),
+          });
+        }
+      });
+    </script>
+    <div class="tm-section tm-container-inner">
+      <div class="row">
+        <div class="col-md-6">
+          <figure class="tm-description-figure">
+            <img
+              src="{{{variables.bg_second}}}"
+              alt="Image"
+              class="img-fluid-2"
+            />
+          </figure>
+        </div>
+        <div class="col-md-6">
+          <div class="tm-description-box">
+            <h4 class="tm-gallery-title">{{{store.name}}}</h4>
+            <p class="tm-mb-45">{{{variables.short_text}}}</p>
+            <hr />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="tm-description">
+            <h4 class="tm-gallery-title">WiFi</h4>
+            <p class="tm-mb-45">{{{variables.WIFIpassword}}}</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="tm-description">
+            <h4 class="tm-gallery-title">Робочий час:</h4>
+            <p class="tm-mb-45">{{{variables.workingHours}}}</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="tm-description">
+            <h4 class="tm-gallery-title">Телефон:</h4>
+            <p class="tm-mb-45">{{{variables.phone}}}</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="tm-description">
+            <h4 class="tm-gallery-title">Адреса:</h4>
+            <p class="tm-mb-45">{{{variables.address}}}</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="tm-description">
+            <h4 class="tm-gallery-title">Соц-мережі:</h4>
+            <a href="#">
+              <p class="tm-site-logo">
+                <i class="fa fa-instagram" style="color: #3b6345"></i> Instagram
+              </p>
+              |
+            </a>
+            <a href="#">
+              <p class="tm-site-logo">
+                <i class="fa fa-facebook" style="color: #3b6345"></i> Facebook
+              </p>
+              |
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </div>
 <!-- <script>
 	$(document).ready(function () {
@@ -159,23 +181,44 @@
 	});
 </script> -->
 <script>
-	window.onscroll = function() {
-scrollFunction();
-};
+  window.onscroll = function () {
+    scrollFunction();
+  };
 
-function scrollFunction() {
-var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  function scrollFunction() {
+    var scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-scrollToTopBtn.style.display = "block";
-} else {
-scrollToTopBtn.style.display = "none";
-}
-}
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      scrollToTopBtn.style.display = "block";
+    } else {
+      scrollToTopBtn.style.display = "none";
+    }
+  }
 
-// Scroll to the top of the page when the button is clicked
-function scrollToTop() {
-document.body.scrollTop = 0; // For Safari
-document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
-}
+  // Scroll to the top of the page when the button is clicked
+  function scrollToTop() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+  }
+</script>
+<script>
+  window.onscroll = function () {
+    fadeInText();
+  };
+
+  function fadeInText() {
+    var hiddenText = document.getElementById("hiddenText");
+
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      hiddenText.style.opacity = "1";
+    } else {
+      hiddenText.style.opacity = "0";
+    }
+  }
 </script>

@@ -936,7 +936,7 @@ address {
   margin-left: 25px;
 }
 .sidebar-menu {
-  text-align: left;
+  text-align: center;
   /* top: 0;
   z-index: 343434; */
   background-color: #1d6e46;
@@ -963,4 +963,15 @@ address {
   border-radius: 5px;
   padding: 10px;
   cursor: pointer;
+}
+.hidden-text {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
 }
