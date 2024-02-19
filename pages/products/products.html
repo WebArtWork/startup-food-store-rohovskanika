@@ -25,9 +25,9 @@
     </div>
   </div>
   <main>
-    <div class="sidebar-menu row">
+    <div id="hiddenText" class="hidden-text" class="sidebar-menu row">
       {% for tag in tags %}
-      <div class="col-lg-3" id="hiddenText" class="hidden-text">
+      <div class="col-lg-3">
         <a href="#{{{tag.id}}}">{{{tag.name}}}</a>
       </div>
       {% endfor %}
