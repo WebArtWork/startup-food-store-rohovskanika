@@ -938,13 +938,17 @@ address {
   margin-left: 25px;
 }
 .sidebar-menu {
-  display: flow;
+  display: flex;
+  overflow-x: auto;
+  flex-wrap: nowrap;
   text-align: left;
   background-color: #1d6e46;
   padding: 10px;
   gap: 20px;
 }
-
+/* .hidden-text {
+  display: none;
+} */
 .sidebar-menu a {
   color: #ffffff;
   white-space: nowrap;
