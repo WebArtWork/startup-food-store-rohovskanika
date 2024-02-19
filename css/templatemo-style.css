@@ -937,7 +937,7 @@ address {
   margin-left: 25px;
 }
 .sidebar-menu {
-  text-align: center;
+  text-align: left;
   background-color: #1d6e46;
   padding: 20px;
   display: none; /* initially hide the sidebar */
