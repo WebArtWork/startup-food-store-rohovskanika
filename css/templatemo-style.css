@@ -947,6 +947,7 @@ address {
 
 .sidebar-menu a {
   color: #ffffff;
+  white-space: nowrap;
   font-weight: 550;
   margin-left: 15px;
   line-height: 2.5;
