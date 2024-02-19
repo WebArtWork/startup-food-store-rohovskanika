@@ -938,9 +938,7 @@ address {
   margin-left: 25px;
 }
 .sidebar-menu {
-  display: flex;
-  overflow-x: auto;
-  flex-wrap:wrap;
+  display: flow;
   text-align: left;
   background-color: #1d6e46;
   padding: 10px;
@@ -951,6 +949,7 @@ address {
   color: #ffffff;
   font-weight: 550;
   margin-left: 15px;
+  line-height: 2.5;
 }
 
 @media only screen and (max-width: 767px) {
