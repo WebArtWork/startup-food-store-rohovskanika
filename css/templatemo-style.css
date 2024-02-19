@@ -286,7 +286,7 @@ address {
 
 @media (max-width: 991px) {
   .tm-header-inner {
-    padding: 170px 55px;
+    padding: 110px 95px;
   }
 }
 
@@ -298,6 +298,7 @@ address {
 .tm-site-text-box {
   display: inline-block;
   color: var(--primary_color);
+  text-shadow: -5px -4px 6px rgba(0, 0, 0, 0.7);
 }
 
 .tm-site-title {
