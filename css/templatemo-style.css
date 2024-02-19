@@ -907,8 +907,8 @@ address {
 }
 
 .heart {
-  background-color: orange;
- border-radius: 0px 5px 0px 10px;
+  background-color: rgb(223, 225, 226);
+ border-radius: 0px 9px 0px 10px;
   position: absolute;
   top: 0;
   left: 225px;
