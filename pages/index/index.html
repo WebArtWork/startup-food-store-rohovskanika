@@ -1,84 +1,198 @@
-<!-- <header class="intro">
-	<div class="intro-body">
-		<div class="container">
-		<div class="intro-all">
-					<p class="intro-text">
-						{{{variables.land_head_text2}}}
-					</p>
-		</div>
-	</div>
-	</div>
-	</div>
-</header>
-	<div class="polosa">
-	<div class="container content-section text-center">
-		<hr>
-			<h3>{{{translate("Rohovskanika.Articles")}}}</h3>
-			<div class="row">
-				{% for article in articles %}
-				<div class="col-md-4">
-					<a href="/articles">
-						<div class="card">
-							<img src="{{{article.thumb}}}" alt="{{{article.name}}}" class="img-rounded">
-							<div class="card-body">
-								<h4 class="card-title">{{{articles.name}}}</h4>
-								<p class="text-as">{{{article.short}}} </p>
-							</div>
-						</div>
-					</a>
-				</div>
-				{% endfor %}
-			</div>
-		</div>
-	<div class="container content-section text-center">
-		<hr>
-		<h3>{{{translate("Rohovskanika.Products")}}}</h3>
-		<div class="row">
-			{% for product in products %}
-			<div class="col-md-4">
-				<a href="/products">
-					<div class="card">
-						<img src="{{{product.thumb}}}" alt="{{{product.name}}}" class="img-rounded">
-						<div class="card-body">
-							<h4 class="card-title">{{{products.name}}}</h4>
-							<p class="text-as">{{{product.short}}}</p>
-						</div>
-					</div>
-				</a>
-			</div>
-			{% endfor %}
-		</div>
-	</div>
-	</div>
-</section>
+<div class="container">
+  <!-- Top box -->
+  <!-- Logo & Site Name -->
+  <div class="placeholder">
+    <div
+      class="parallax-window"
+      data-parallax="scroll"
+      data-image-src="img/simple-house-01.jpg"
+    >
+      <div class="tm-header">
+        <div class="row tm-header-inner">
+          <div class="col-md-6 col-12">
+            <img
+              src="/rohovskanika/img/simple-house-logo.png"
+              alt="Logo"
+              class="tm-site-logo"
+            />
+            <div class="tm-site-text-box">
+              <h1 class="tm-site-title">{{{store.name}}}</h1>
+              <h6 class="tm-site-description">{{{variables.type}}}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main>
+    <header class="row tm-welcome-section">
+      <h2 class="col-12 text-center tm-section-title">{{{store.name}}}</h2>
+      <p class="col-12 text-center">{{{store.description}}}</p>
+    </header>
 
-	<!-- Contact Section -->
-	<section id="contact">
-		<div class="container content-section text-center">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<h3>{{{variables.logo_text}}}</h3>
-					<p>
-						{{{variables.contact_text}}}
-					</p>
-					<p>
-						<i><a href="mailto:waw@gmail.com" style="border-bottom:1px dashed #ccc;">{{{variables.email_text}}}</a></i>
-					</p>
-					<ul class="list-inline banner-social-buttons">
-						<li>
-							<a href="{{{variables.link_telegram}}}" class="btn btnghost btn-lg"><span
-									class="network-name">{{{translate("Rohovskanika.Telegram")}}}</span></a>
-						</li>
-						<li>
-							<a href="{{{variables.link_facebook}}}"
-								class="btn btnghost btn-lg"><span class="network-name">{{{translate("Rohovskanika.Facebook")}}}</span></a>
-						</li>
-						<li>
-							<a href="{{{variables.link_instagram}}}"
-								class="btn btnghost btn-lg"><span class="network-name">{{{translate("Rohovskanika.Instagram")}}}</span></a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
+    <h1 class="col-12 text-center tm-section-title">Articles</h1>
+    <div class="tm-gallery-page-pizza">
+      {% for article in articles %}
+      <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+        <figure>
+          <a href="/article/{{{article.id}}}">
+            <img
+              src="{{{article.thumb || variables.bg_main}}}"
+              alt="Image"
+              class="img-fluid tm-gallery-img"
+            />
+          </a>
+          <figcaption>
+            <div class="tm-gallery-title">{{{article.name}}}</div>
+            <p class="tm-gallery-description">{{{article.description}}}</p>
+          </figcaption>
+        </figure>
+      </article>
+      {% endfor %}
+    </div>
+
+    <h1 class="col-12 text-center tm-section-title">Products</h1>
+    <div class="tm-gallery-page-pizza">
+      {% for product in products %}
+      <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+        <figure>
+          <a href="/product/{{{product.id}}}">
+            <img
+              src="{{{product.thumb || variables.bg_main}}}"
+              alt="Image"
+              class="img-fluid tm-gallery-img"
+            />
+          </a>
+          <div class="heart">
+            <div
+              class="{{{(productFavorited && productFavorited(product.id)) ? 'productFavorited' : ''}}}"
+              productId="{{{product.id}}}"
+            >
+              <div class="counter">{{{product.favorited || 0}}}</div>
+              <div class="hearts">
+                <img
+                  src="/rohovskanika/img/heart.svg"
+                  class="heart-icon normal-heart"
+                />
+                <img
+                  src="/rohovskanika/img/red-heart.svg"
+                  class="heart-icon red-heart"
+                />
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <div class="tm-gallery-title">{{{product.name}}}</div>
+            <p class="tm-gallery-description">{{{product.description}}}</p>
+            <p class="tm-gallery-price">
+              {{{product.price}}} грн / {{{product.weight}}}
+            </p>
+          </figcaption>
+        </figure>
+      </article>
+      {% endfor %}
+    </div>
+
+    <button id="scrollToTopBtn" onclick="scrollToTop()">Вверх</button>
+
+    <div class="tm-section tm-container-inner">
+      <div class="row">
+        <div class="col-md-6">
+          <figure class="tm-description-figure">
+            <img
+              src="{{{variables.bg_second}}}"
+              alt="Image"
+              class="img-fluid-2"
+            />
+          </figure>
+        </div>
+        <div class="col-md-6">
+          <div class="tm-description-box">
+            <h4 class="tm-gallery-title">{{{store.name}}}</h4>
+            <p class="tm-mb-45">{{{variables.short_text}}}</p>
+            <hr />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="tm-description">
+            <h4 class="tm-gallery-title">WiFi</h4>
+            <p class="tm-mb-45">{{{variables.WIFIpassword}}}</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="tm-description">
+            <h4 class="tm-gallery-title">Робочий час:</h4>
+            <p class="tm-mb-45">{{{variables.workingHours}}}</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="tm-description">
+            <h4 class="tm-gallery-title">Телефон:</h4>
+            <p class="tm-mb-45">{{{variables.phone}}}</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="tm-description">
+            <h4 class="tm-gallery-title">Адреса:</h4>
+            <p class="tm-mb-45">{{{variables.address}}}</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="tm-description">
+            <h4 class="tm-gallery-title">Соц-мережі:</h4>
+            <a href="#">
+              <p class="tm-site-logo">
+                <i class="fa fa-instagram" style="color: #3b6345"></i> Instagram
+              </p>
+              |
+            </a>
+            <a href="#">
+              <p class="tm-site-logo">
+                <i class="fa fa-facebook" style="color: #3b6345"></i> Facebook
+              </p>
+              |
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<!-- <script>
+	  $(document).ready(function () {
+		  // Handle click on paging links
+		  $(".tm-paging-link").click(function (e) {
+			  e.preventDefault();
+  
+			  var page = $(this).text().toLowerCase();
+			  $(".tm-gallery-page").addClass("hidden");
+			  $("#tm-gallery-page-" + page).removeClass("hidden");
+			  $(".tm-paging-link").removeClass("active");
+			  $(this).addClass("active");
+		  });
+	  });
+  </script> -->
+<script>
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      scrollToTopBtn.style.display = "block";
+    } else {
+      scrollToTopBtn.style.display = "none";
+    }
+  }
+
+  // Scroll to the top of the page when the button is clicked
+  function scrollToTop() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+  }
+</script>

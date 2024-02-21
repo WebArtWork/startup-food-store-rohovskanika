@@ -45,27 +45,36 @@
 	</style>
 </head>
 
-<head>
-	<meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Simple House Template</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />    
-	<link href="css/templatemo-style.css" rel="stylesheet" />
-</head>
-
-
 	<main class="main-section">
 		<!-- HTML -->
 	</main>
 
-	<div class="container">
-	<footer class="tm-footer text-center">
+	<footer>
+		<div class="container">
+			{% if footer.contents.length %}
+			<div class="tm-footer text-left">
+				<span class="tm-gallery-title" style="color: aliceblue;">Content</span>
+				<div class="tm-gallery-description">
+
+					{% for content in footer.contents %}
+
+					<p class="">
+						<a href="{{{content.url}}}" class="footer-menu__pnk">{{{content.name}}}</a>
+					</p>
+
+					{% endfor %}
+
+				</div>
+			</div>
+			{% endif %}
+		
+		<div class="tm-footer text-center">
 		<p>Copyright &copy; 2020 Food in UA 
 		
 		| Design: <a rel="nofollow" href="https://webart.work/m/64eee5d08eaf76400c6c3063">NR</a></p>
-	</footer>
+	</div>
 </div>
+	</footer>
 
 
 	<!-- jQuery -->

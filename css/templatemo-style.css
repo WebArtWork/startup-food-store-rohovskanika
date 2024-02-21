@@ -372,6 +372,11 @@ address {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
+.tm-gallery-page-pizza{
+
+display: flex;
+  justify-content: center;
+}
 
 .tm-gallery-description {
   font-size: 0.95rem;
