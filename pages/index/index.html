@@ -53,7 +53,7 @@
 
     <h1 class="col-12 text-center tm-section-title">Products</h1>
     <div class="tm-gallery-page-pizza">
-      {% for product in products %}
+		{% for product in products %}
       <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
         <figure>
           <a href="/product/{{{product.id}}}">
@@ -63,24 +63,6 @@
               class="img-fluid tm-gallery-img"
             />
           </a>
-          <div class="heart">
-            <div
-              class="{{{(productFavorited && productFavorited(product.id)) ? 'productFavorited' : ''}}}"
-              productId="{{{product.id}}}"
-            >
-              <div class="counter">{{{product.favorited || 0}}}</div>
-              <div class="hearts">
-                <img
-                  src="/rohovskanika/img/heart.svg"
-                  class="heart-icon normal-heart"
-                />
-                <img
-                  src="/rohovskanika/img/red-heart.svg"
-                  class="heart-icon red-heart"
-                />
-              </div>
-            </div>
-          </div>
           <figcaption>
             <div class="tm-gallery-title">{{{product.name}}}</div>
             <p class="tm-gallery-description">{{{product.description}}}</p>

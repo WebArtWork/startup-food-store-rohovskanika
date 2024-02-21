@@ -4,46 +4,57 @@
 		"telegram": "https://t.me/wawceo"
 	},
 	"products": [
-		{
-			"id": "product",
-			"price": 1200,
-			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-			"thumb": "https://neryxomka.com/template/img/welcome.png",
-			"name": "product"
-		},
-		{
-			"id": "product",
-			"price": 1200,
-			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-			"thumb": "https://neryxomka.com/template/img/welcome.png",
-			"name": "product"
-		},
-		{
-			"id": "product",
-			"price": 1200,
-			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-			"thumb": "https://neryxomka.com/template/img/welcome.png",
-			"name": "product"
-		}
-	],
+        {
+          "url": "/product",
+          "description": "Салямі, сир.",
+          "thumb": "rohovskanika/img/gallery/pizza3.jpg",
+          "price": "120",
+          "weight": "300",
+          "name": "Папероні"
+        },
+        {
+          "url": "/product",
+          "description": "Курка, ананас, сир.",
+          "thumb": "rohovskanika/img/gallery/02.jpg",
+          "price": "120",
+          "weight": "300",
+          "name": "Гавайська"
+        },
+        {
+          "url": "/product",
+          "description": "Моцарела, сир.",
+          "price": "120",
+          "weight": "300",
+          "thumb": "rohovskanika/img/gallery/pizza2.jpg",
+          "name": "Моцарела"
+        },
+        {
+          "url": "/product",
+          "description": "Моцарела, сир.",
+          "price": "120",
+          "weight": "300",
+          "thumb": "rohovskanika/img/gallery/pizza4.jpg",
+          "name": "Моцарела"
+        }
+      ],
 	"articles": [
 		{
 			"id": "article",
-			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-			"thumb": "https://neryxomka.com/template/img/welcome.png",
-			"name": "article"
+			"description": "Indulge your senses in a culinary journey as we explore the tantalizing world of gastronomy in our latest food article.",
+			"thumb": "rohovskanika/img/article1.jpg",
+			"name": "Article"
 		},
 		{
 			"id": "article",
-			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-			"thumb": "https://neryxomka.com/template/img/welcome.png",
-			"name": "article"
+			"description": "Indulge your senses in a culinary journey as we explore the tantalizing world of gastronomy in our latest food article.",
+			"thumb": "rohovskanika/img/article2.jpg",
+			"name": "Article"
 		},
 		{
 			"id": "article",
-			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-			"thumb": "https://neryxomka.com/template/img/welcome.png",
-			"name": "article"
+			"description": "Indulge your senses in a culinary journey as we explore the tantalizing world of gastronomy in our latest food article.",
+			"thumb": "rohovskanika/img/article3.jpg",
+			"name": "Article"
 		}
 	]
 }
