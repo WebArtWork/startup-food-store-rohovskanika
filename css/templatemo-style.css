@@ -207,8 +207,8 @@ html {
   border-radius: 10px;
 }
 .img-fluid-2 {
-  width: 350px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
 }
 .img-fluid-3 {
@@ -895,10 +895,15 @@ address {
 }
 
 .back-arrow {
-  font-size: 24px;
-  padding: 10px;
+  position: relative;
+  top: 12px;
+  left: 10px;
+  background-color: var(--main_color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
   cursor: pointer;
-  color: var(--main_color); /* Змініть колір за потреби */
 }
 
 .back-arrow:hover {
