@@ -1,3 +1,10 @@
+<script type="module">
+	import Dom from '/api/wjst/dom';
+	import Core from  '/api/wjst/core';
+	
+	Dom.click("BackButton", ()=> Core.back());
+	
+	</script>
 <div class="container">
 	<!-- Top box -->
 	<!-- Logo & Site Name -->
@@ -17,13 +24,13 @@
 		</div>
 	</div>
 	<main>
-			<a href="" onclick="history.go(-1)" class="back-arrow">&larr; Back</a>
+			<a href="" id="BackButton" class="back-arrow">&larr; Back</a>
 				<div id="tm-gallery-page-pizza" class="tm-gallery-page" style="margin-top: 22px;">
 						<figure class="product_block">
 							<img src="{{{product.thumb || variables.bg_main}}}" alt="Image" class="img-fluid-3" />
 							<figcaption>
 								<h4 class="tm-gallery-title">{{{product.name}}}</h4>
-                                <p class="tm-gallery-description">{{{product.description}}}</p>
+                                <p class="tm-gallery-description"><b>Склад:</b> {{{product.description}}}</p>
                                 <p class="tm-gallery-price">{{{product.price}}} грн / {{{product.weight}}}</p>
 							</figcaption>
 						</figure>
