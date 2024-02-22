@@ -8,7 +8,8 @@
   "moderators": [],
   "scss": "scss/index.scss",
   "variables": {
-    "primary_color": "white;",
+    "primary_color": "white",
+    "main_color": "#1d6e46",
     "type": "restaurant",
     "bg_section": "/rohovskanika/img/simple-house-03.jpg",
     "bg_main": "/rohovskanika/img/rest.jpg",
@@ -29,7 +30,8 @@
     "bg_section": "Photo",
     "bg_main": "Photo",
     "bg_second": "Photo",
-    "primary_color": "Color"
+    "primary_color": "Color",
+    "main_color": "Color"
   },
   "store": {
     "name": "Niki",

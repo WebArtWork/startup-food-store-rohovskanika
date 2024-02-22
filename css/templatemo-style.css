@@ -167,7 +167,7 @@ html {
 
 .tm-btn-success:hover,
 .tm-btn-success:focus {
-  background-color: #1d6e46;
+  background-color: var(--main_color);
 }
 
 .tm-btn-danger {
@@ -468,7 +468,7 @@ display: flex;
 
 .tm-paging-link.active,
 .tm-paging-link:hover {
-  background-color: #1d6e46;
+  background-color: var(--main_color);
   color: white;
 }
 
@@ -504,7 +504,7 @@ display: flex;
 
 .tm-footer {
   padding: 25px 15px;
-  background-color: #3b6345;
+  background-color: var(--main_color);
   color: #ffffff;
 }
 
@@ -898,7 +898,7 @@ address {
   font-size: 24px;
   padding: 10px;
   cursor: pointer;
-  color: #1d6e46; /* Змініть колір за потреби */
+  color: var(--main_color); /* Змініть колір за потреби */
 }
 
 .back-arrow:hover {
@@ -944,7 +944,7 @@ address {
   overflow-x: auto;
   flex-wrap: nowrap;
   text-align: left;
-  background-color: #1d6e46;
+  background-color: var(--main_color);
   padding: 10px;
   gap: 20px;
 }
