@@ -218,13 +218,7 @@ html {
   border-radius: 10px;
 }
 
-body {
-  font-family: "Open Sans", Arial, sans-serif;
-  font-size: 17px;
-  background-color: #ccc;
-  overflow-x: hidden;
-  overflow-x: hidden;
-}
+
 
 .container {
   background-color: white;

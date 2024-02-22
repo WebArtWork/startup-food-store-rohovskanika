@@ -30,8 +30,11 @@
 				--primary_color: {{{variables.primary_color || "white"}}};
 			}
 		body {
-        	background-size: contain;
-			background: url({{{variables.bg_section}}}) center;
+        	background-size: cover;
+			background-image: url({{{variables.bg_section}}});
+			font-family: "Open Sans", Arial, sans-serif;
+  			font-size: 17px;
+  			overflow-x: hidden;
 		}
 		.placeholder {
  			 width: 100%;
