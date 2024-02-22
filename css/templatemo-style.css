@@ -972,7 +972,7 @@ address {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #1153229a;
+  background-color: var(--primary_color);
   color: #fff;
   border: none;
   border-radius: 5px;
