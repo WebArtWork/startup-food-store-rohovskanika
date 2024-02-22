@@ -207,8 +207,8 @@ html {
   border-radius: 10px;
 }
 .img-fluid-2 {
-  width: 280px;
-  height: 280px;
+  width: 320px;
+  height: 120px;
   object-fit: cover;
 }
 .img-fluid-3 {
