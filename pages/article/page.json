@@ -1,9 +1,9 @@
 {
-	"name": "article",
-	"article": {
-		"id": "",
-		"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-        "thumb": "https://neryxomka.com/template/img/welcome.png",
-		"name": "Article Name"
-	}
+  "name": "article",
+  "article": {
+    "id": "",
+    "description": "Indulge your senses in a culinary journey as we explore the tantalizing world of gastronomy in our latest food article.",
+    "thumb": "rohovskanika/img/article3.jpg",
+    "name": "Article"
+  }
 }

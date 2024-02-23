@@ -1,40 +1,34 @@
 {
-	"name": "articles",
-	"articles": [
-		{
-			"id": "123",
-			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-			"thumb": "https://neryxomka.com/template/img/welcome.png",
-			"name": "Article Name"
-		},
-		{
-			"id": "123",
-			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-			"thumb": "https://neryxomka.com/template/img/welcome.png",
-			"name": "Article Name"
-		},
-		{
-			"id": "123",
-			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-			"thumb": "https://neryxomka.com/template/img/welcome.png",
-			"name": "Article Name"
-		}
-	],
-	"groups": [
-		{
-			"categories": [
-				{
-					"name": "Category Name",
-					"tags": [
-						{
-							"name": "Tag Name"
-						}
-					]
-				}
-			]
-		}
-	]
+  "name": "articles",
+  "tags": [
+    {
+      "name": "articles",
+      "articles": [
+        {
+          "id": "",
+          "description": "Indulge your senses in a culinary journey as we explore the tantalizing world of gastronomy in our latest food article.",
+          "thumb": "rohovskanika/img/article3.jpg",
+          "name": "Article"
+        },
+        {
+          "id": "",
+          "description": "Indulge your senses in a culinary journey as we explore the tantalizing world of gastronomy in our latest food article.",
+          "thumb": "rohovskanika/img/article2.jpg",
+          "name": "Article"
+        },
+        {
+          "id": "",
+          "description": "Indulge your senses in a culinary journey as we explore the tantalizing world of gastronomy in our latest food article.",
+          "thumb": "rohovskanika/img/article3.jpg",
+          "name": "Article"
+        },
+        {
+          "id": "",
+          "description": "Indulge your senses in a culinary journey as we explore the tantalizing world of gastronomy in our latest food article.",
+          "thumb": "rohovskanika/img/article2.jpg",
+          "name": "Article"
+        }
+      ]
+    }
+  ]
 }

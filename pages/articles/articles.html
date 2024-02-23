@@ -1,111 +1,164 @@
-<script type="module">
-	import Article from "/api/wjst/article";
-	import Dom from "/api/wjst/dom";
-	Article.perPage = 10;
-	let page = 1;
-
-	if ((await Article.page(1)).length < Article.perPage) {
-		Dom.remove("loadArticles");
-	}
-
-	document
-		.getElementById("loadArticles")
-		.addEventListener("click", async () => {
-			page++;
-			const articles = await Article.page(page);
-
-			if (articles.length < Article.perPage) {
-				Dom.remove("loadArticles");
-			}
-			for (const article of articles) {
-				if (!article.thumbs) {
-					article.thumbs = [];
-				}
-				Dom.add(
-					"articles",
-					Dom.template("article", {
-						thumb: article.thumb,
-						thumbs: article.thumbs.map((thumb) => {
-							return Dom.template("article_thumb", {
-								name: article.name,
-								thumb,
-							});
-						}),
-						name: article.name,
-						_id: article._id,
-						short: article.short,
-						description: article.description,
-					})
-				);
-			}
-		});
-</script>
-
-<div class="container-new">
-	<div>
-		<h1>{{{translate("Rohovskanika.Articles")}}}</h1>
-		<a href="#page-sample" class="btn btn-circle page-scroll">
-			<i class="fa fa-angle-double-down animated"></i>
-		</a>
-	</div>
-	<!-- Page Sample Section -->
-	<section id="page-sample">
-		<div class="polosar">
-			<div class="container content-section text-center">
-				<div class="row" id="articles">
-					{% for article in articles %}
-					<div class="img-slider">
-						<div class="col-md-4">
-							<a href="/article/{{{article.id}}}">
-								<div class="card">
-									<img
-										src="{{{article.thumb}}}"
-										alt="{{{article.name}}}"
-										width="700px"
-										class="img-rounded"
-									/>
-									<div class="card-body">
-										<h5 class="card-title">
-											{{{article.name}}}
-										</h5>
-										<p class="card-text">
-											{{{article.short}}}
-										</p>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-					{% endfor %}
-				</div>
-
-				<button class="load-more" id="loadArticles">
-					{{{translate("Rohovskanika.Load more")}}}
-				</button>
+<div class="container">
+	<!-- Top box -->
+	<!-- Logo & Site Name -->
+	<div class="placeholder">
+	  <div
+		class="parallax-window"
+		data-parallax="scroll"
+		data-image-src="img/simple-house-01.jpg"
+	  >
+		<div class="tm-header">
+		  <div class="row tm-header-inner">
+			<div class="col-md-6 col-12">
+			  <img
+				src="/rohovskanika/img/simple-house-logo.png"
+				alt="Logo"
+				class="tm-site-logo"
+			  />
+			  <div class="tm-site-text-box">
+				<h1 class="tm-site-title">{{{store.name}}}</h1>
+				<h6 class="tm-site-description">{{{variables.type}}}</h6>
+			  </div>
 			</div>
+		  </div>
 		</div>
-	</section>
-</div>
-<div id="template-article">
-	<div class="img-slider"  style="display: none;" >
-		<div class="col-md-4">
-			<a href="/article/{_id}">
-				<div class="card">
-					<img
-						src="{{{thumb}}}"
-						alt="{{{name}}}"
-						style="min-height: 150px; min-width: 300px; max-height: 300px; object-fit: cover;"
-					/>
-					<div class="card-body">
-						<h5 class="card-title">
-							{{{name}}}
-						</h5>
-						<p class="card-text">
-							{{{short}}}
-						</p>
-					</div>
-				</div>
-			</a>
-		</div>
+	  </div>
 	</div>
-</div>
+	<main>
+  
+	  <div class="sidebar-menu">
+		{% for tag in tags %}
+		  <a href="#{{{tag.id}}}">{{{tag.name}}}</a>
+		{% endfor %}
+	  </div>
+  
+	  <header class="row tm-welcome-section">
+		<h2 class="col-12 text-center tm-section-title">{{{store.name}}}</h2>
+		<p class="col-12 text-center">{{{store.description}}}</p>
+	  </header>
+	  {% for tag in tags %}
+	  <div id="{{{tag.id}}}" class="tm-paging-link active">{{{tag.name}}}</div>
+	  <div id="tm-gallery-page-pizza" class="tm-gallery-page">
+		{% for article in tag.articles %}
+		<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+		  <figure>
+			<a href="/article/{{{article.id}}}">
+			  <img
+				src="{{{article.thumb || variables.bg_main}}}"
+				alt="Image"
+				class="img-fluid tm-gallery-img"
+			  />
+			</a>
+			<figcaption>
+			  <div class="tm-gallery-title">{{{article.name}}}</div>
+			  <p class="tm-gallery-description">{{{article.description}}}</p>
+			</figcaption>
+		  </figure>
+		</article>
+		{% endfor %}
+	  </div>
+	  {% endfor %}
+	  <button id="scrollToTopBtn" onclick="scrollToTop()">{{{translate("Rohovskanika.Top")}}}</button>
+	  <!-- gallery page 1 -->
+	  <div class="tm-section tm-container-inner">
+		<div class="row">
+		  <div class="col-md-6">
+			<figure class="tm-description-figure">
+			  <img
+				src="{{{variables.bg_second}}}"
+				alt="Image"
+				class="img-fluid-2"
+			  />
+			</figure>
+		  </div>
+		  <div class="col-md-6">
+			<div class="tm-description-box">
+			  <h4 class="tm-gallery-title">{{{store.name}}}</h4>
+			  <p class="tm-mb-45">{{{variables.short_text}}}</p>
+			  <hr />
+			</div>
+		  </div>
+		  <div class="col-md-6">
+			<div class="tm-description">
+			  <h4 class="tm-gallery-title">WiFi</h4>
+			  <p class="tm-mb-45">{{{variables.WIFIpassword}}}</p>
+			</div>
+		  </div>
+		  <div class="col-md-6">
+			<div class="tm-description">
+			  <h4 class="tm-gallery-title">{{{translate("Rohovskanika.Working time")}}}:</h4>
+			  <p class="tm-mb-45">{{{variables.workingHours}}}</p>
+			</div>
+		  </div>
+		  <div class="col-md-6">
+			<div class="tm-description">
+			  <h4 class="tm-gallery-title">{{{translate("Rohovskanika.Phone")}}}:</h4>
+			  <p class="tm-mb-45">{{{variables.phone}}}</p>
+			</div>
+		  </div>
+		  <div class="col-md-6">
+			<div class="tm-description">
+			  <h4 class="tm-gallery-title">{{{translate("Rohovskanika.Address")}}}:</h4>
+			  <p class="tm-mb-45">{{{variables.address}}}</p>
+			</div>
+		  </div>
+		  <div class="col-md-6">
+			<div class="tm-description">
+			  <h4 class="tm-gallery-title">{{{translate("Rohovskanika.Social networks")}}}:</h4>
+			  <a href="#">
+				<p class="tm-site-logo">
+				  <i class="fa fa-instagram" style="color: #3b6345"></i> Instagram
+				</p>
+				|
+			  </a>
+			  <a href="#">
+				<p class="tm-site-logo">
+				  <i class="fa fa-facebook" style="color: #3b6345"></i> Facebook
+				</p>
+				|
+			  </a>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</main>
+  </div>
+  <!-- <script>
+	  $(document).ready(function () {
+		  // Handle click on paging links
+		  $(".tm-paging-link").click(function (e) {
+			  e.preventDefault();
+  
+			  var page = $(this).text().toLowerCase();
+			  $(".tm-gallery-page").addClass("hidden");
+			  $("#tm-gallery-page-" + page).removeClass("hidden");
+			  $(".tm-paging-link").removeClass("active");
+			  $(this).addClass("active");
+		  });
+	  });
+  </script> -->
+  <script>
+	window.onscroll = function () {
+	  scrollFunction();
+	};
+  
+	function scrollFunction() {
+	  var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  
+	  if (
+		document.body.scrollTop > 20 ||
+		document.documentElement.scrollTop > 20
+	  ) {
+		scrollToTopBtn.style.display = "block";
+	  } else {
+		scrollToTopBtn.style.display = "none";
+	  }
+	}
+  
+	// Scroll to the top of the page when the button is clicked
+	function scrollToTop() {
+	  document.body.scrollTop = 0; // For Safari
+	  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+	}
+  </script>
+  

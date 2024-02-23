@@ -1,6 +1,44 @@
-<h1>{{{content.name}}}</h1>
-<img src="{{{content.thumb}}}" alt="{{{content.name}}}">
-
-<pre>
-	{{{content.description|safe}}}
-</pre>
+<div class="container">
+	<!-- Top box -->
+	<!-- Logo & Site Name -->
+	<div class="placeholder">
+		<div class="parallax-window" data-parallax="scroll" data-image-src="img/simple-house-01.jpg">
+			<div class="tm-header">
+				<div class="row tm-header-inner">
+					<div class="col-md-6 col-12">
+						<img src="/rohovskanika/img/simple-house-logo.png" alt="Logo" class="tm-site-logo" />
+						<div class="tm-site-text-box">
+							<h1 class="tm-site-title">{{{store.name}}}</h1>
+							<h6 class="tm-site-description">{{{variables.type}}}</h6>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<main>
+			<a href="" onclick="history.go(-1)" class="back-arrow">&larr; Back</a>
+				<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+						<figure class="product_block">
+							<img src="{{{content.thumb || variables.bg_main}}}" alt="Image" class="img-fluid-3" />
+							<figcaption>
+								<h4 class="tm-gallery-title">{{{content.name}}}</h4>
+                                <p class="tm-gallery-description">{{{content.description|safe}}}</p>
+							</figcaption>
+						</figure>
+					</main>
+				</div> 
+	<script>
+		$(document).ready(function(){
+			// Handle click on paging links
+			$('.tm-paging-link').click(function(e){
+				e.preventDefault();
+				
+				var page = $(this).text().toLowerCase();
+				$('.tm-gallery-page').addClass('hidden');
+				$('#tm-gallery-page-' + page).removeClass('hidden');
+				$('.tm-paging-link').removeClass('active');
+				$(this).addClass("active");
+			});
+		});
+	</script>

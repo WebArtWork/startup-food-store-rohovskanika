@@ -30,7 +30,7 @@
       <p class="col-12 text-center">{{{store.description}}}</p>
     </header>
 
-    <h1 class="col-12 text-center tm-section-title">Articles</h1>
+    <h1 class="col-12 text-center tm-section-title"><a href="/articles">{{{translate("Rohovskanika.Articles")}}}</a></h1>
     <div class="tm-gallery-page-pizza">
       {% for article in articles %}
       <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
@@ -51,7 +51,7 @@
       {% endfor %}
     </div>
 
-    <h1 class="col-12 text-center tm-section-title">{{{translate("Rohovskanika.Products")}}}</h1>
+    <h1 class="col-12 text-center tm-section-title"><a href="/products">{{{translate("Rohovskanika.Products")}}}</a></h1>
     <div class="tm-gallery-page-pizza">
 		{% for product in products %}
       <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
