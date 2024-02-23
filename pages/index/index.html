@@ -51,7 +51,7 @@
       {% endfor %}
     </div>
 
-    <h1 class="col-12 text-center tm-section-title">Products</h1>
+    <h1 class="col-12 text-center tm-section-title">{{{translate("Rohovskanika.Products")}}}</h1>
     <div class="tm-gallery-page-pizza">
 		{% for product in products %}
       <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
@@ -75,7 +75,7 @@
       {% endfor %}
     </div>
 
-    <button id="scrollToTopBtn" onclick="scrollToTop()">Вверх</button>
+    <button id="scrollToTopBtn" onclick="scrollToTop()">{{{translate("Rohovskanika.Top")}}}</button>
 
     <div class="tm-section tm-container-inner">
       <div class="row">
@@ -103,25 +103,25 @@
         </div>
         <div class="col-md-6">
           <div class="tm-description">
-            <h4 class="tm-gallery-title">Робочий час:</h4>
+            <h4 class="tm-gallery-title">{{{translate("Rohovskanika.Working time")}}}:</h4>
             <p class="tm-mb-45">{{{variables.workingHours}}}</p>
           </div>
         </div>
         <div class="col-md-6">
           <div class="tm-description">
-            <h4 class="tm-gallery-title">Телефон:</h4>
+            <h4 class="tm-gallery-title">{{{translate("Rohovskanika.Phone")}}}:</h4>
             <p class="tm-mb-45">{{{variables.phone}}}</p>
           </div>
         </div>
         <div class="col-md-6">
           <div class="tm-description">
-            <h4 class="tm-gallery-title">Адреса:</h4>
+            <h4 class="tm-gallery-title">{{{translate("Rohovskanika.Address")}}}:</h4>
             <p class="tm-mb-45">{{{variables.address}}}</p>
           </div>
         </div>
         <div class="col-md-6">
           <div class="tm-description">
-            <h4 class="tm-gallery-title">Соц-мережі:</h4>
+            <h4 class="tm-gallery-title">{{{translate("Rohovskanika.Social networks")}}}:</h4>
             <a href="#">
               <p class="tm-site-logo">
                 <i class="fa fa-instagram" style="color: #3b6345"></i> Instagram

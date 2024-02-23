@@ -16,7 +16,7 @@
 						<img src="/rohovskanika/img/simple-house-logo.png" alt="Logo" class="tm-site-logo" />
 						<div class="tm-site-text-box">
 							<h1 class="tm-site-title">{{{store.name}}}</h1>
-							<h6 class="tm-site-description">new restaurant</h6>
+							<h6 class="tm-site-description">{{{variables.type}}}</h6>
 						</div>
 					</div>
 				</div>
@@ -24,13 +24,13 @@
 		</div>
 	</div>
 	<main>
-			<a href="" id="BackButton" class="back-arrow">&larr; Back</a>
+			<a href="" onclick="history.go(-1)" class="back-arrow">&larr; {{{translate("RohovskanikaBack")}}}</a>
 				<div id="tm-gallery-page-pizza" class="tm-gallery-page" style="margin-top: 22px;">
 						<figure class="product_block">
 							<img src="{{{product.thumb || variables.bg_main}}}" alt="Image" class="img-fluid-3" />
 							<figcaption>
 								<h4 class="tm-gallery-title">{{{product.name}}}</h4>
-                                <p class="tm-gallery-description"><b>Склад:</b> {{{product.description}}}</p>
+                                <p class="tm-gallery-description"><b>{{{translate("Rohovskanika.Composition")}}}:</b> {{{product.description}}}</p>
                                 <p class="tm-gallery-price">{{{product.price}}} грн / {{{product.weight}}}</p>
 							</figcaption>
 						</figure>
