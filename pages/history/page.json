@@ -1,0 +1,40 @@
+{
+	"name": "history",
+	"orders": [{
+		"products": [
+			{
+				"product": {
+					"thumb": "https://agro.webart.work/template/img/welcome.png",
+					"id": "",
+					"name": "product"
+				},
+				"quantity": 5,
+				"currency": "uah",
+				"price": 1200,
+				"data":"02.202.2024"
+			},
+			{
+				"product": {
+					"thumb": "https://agro.webart.work/template/img/welcome.png",
+					"id": "",
+					"name": "product"
+				},
+				"quantity": 10,
+				"currency": "uah",
+				"price": 1200,
+				"data":"02.202.2024"
+			},
+			{
+				"product": {
+					"thumb": "https://agro.webart.work/template/img/welcome.png",
+					"id": "",
+					"name": "product"
+				},
+				"quantity": 15,
+				"currency": "uah",
+				"price": 1200,
+				"data":"02.202.2024"
+			}
+		]
+	}]
+}
